@@ -1,0 +1,152 @@
+{
+  "benchmark": "jev-grip-benchmark",
+  "camera_config": {
+    "camera_name": "camera_wrist_right",
+    "height": 300,
+    "min_box_pixel_fraction": 0.005,
+    "min_box_pixels": 200,
+    "width": 480
+  },
+  "evaluator_schema_version": "1.0",
+  "generated_at_utc": "2026-11-26T12:56:09.728383+00:00",
+  "milestone": "pilot",
+  "num_groups": 50,
+  "observation_schema_version": "1.0",
+  "oracle_profile": {
+    "close_finger_target_rad": 0.0,
+    "close_ramp_s": 0.35,
+    "close_settle_s": 0.15,
+    "control_hz": 100,
+    "hold_duration_s": 0.4,
+    "lift_duration_s": 0.4,
+    "lift_height_m": 0.04,
+    "max_close_hand_pos_err_m": 0.015,
+    "max_close_hand_rot_err_deg": 10.0,
+    "max_gripper_mimic_err_rad": 0.05,
+    "max_hold_hand_pos_err_m": 0.015,
+    "max_hold_hand_rot_err_deg": 10.0,
+    "max_initial_box_angvel_radps": 0.3,
+    "max_initial_box_linvel_mps": 0.03,
+    "max_initial_box_tilt_deg": 10.0,
+    "max_initial_hand_linvel_mps": 0.03,
+    "max_initial_hand_pos_err_m": 0.015,
+    "max_initial_hand_rot_err_deg": 8.0,
+    "max_initial_penetration_m": 0.005,
+    "max_lift_end_pos_err_m": 0.015,
+    "max_lift_end_rot_err_deg": 10.0,
+    "max_lift_rise_deficit_m": 0.01,
+    "max_object_drift_rel_hand_m": 0.025,
+    "max_unloaded_close_err_rad": 0.075,
+    "min_finger_contact_force_n": 0.1,
+    "min_hold_bilateral_fraction": 0.8,
+    "min_initial_support_force_n": 0.05,
+    "min_object_rise_m": 0.025,
+    "min_support_clearance_m": 0.015,
+    "min_support_contact_force_n": 0.05,
+    "rationale": "The 40 mm lift and 0.40 s hold leave clearance for verifying retention after the object leaves the support. The drive and contact solver are held fixed across trials."
+  },
+  "provenance": {
+    "camera_name": "camera_wrist_right",
+    "git_head": "73fa61143747d6ffc6660bd7c319b8f8403830c6",
+    "mujoco_version": "3.17.0",
+    "numpy_version": "2.4.6",
+    "openarm_control_version": "0.5.0",
+    "openarm_mujoco_version": "2.3.0",
+    "pedestal_xml_path": "/home/hapticslab/workspaces/nishi/src/openarm-controller-touchdesigner/.venv/share/openarm_mujoco/v2/pedestal/pedestal.xml",
+    "pedestal_xml_sha256": "49e9dfdf0bfec4f818955a4c39e91deb6b2ab2326b13f48421c1c9cd2f12dadb",
+    "platform": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35",
+    "python_version": "3.11.18"
+  },
+  "scene_config": {
+    "box_friction": [
+      1.0,
+      0.01,
+      0.001
+    ],
+    "box_half_extents": [
+      0.02,
+      0.02,
+      0.032
+    ],
+    "box_mass_kg": 0.06,
+    "box_rgba": [
+      0.88,
+      0.32,
+      0.12,
+      1.0
+    ],
+    "open_finger_rad": -0.45,
+    "pinch_z_offset_above_box_center_m": 0.018,
+    "settle_duration_s": 0.25,
+    "table_center_xy": [
+      0.53,
+      -0.15
+    ],
+    "table_friction": [
+      1.0,
+      0.005,
+      0.0001
+    ],
+    "table_half_extents": [
+      0.2,
+      0.25,
+      0.04
+    ],
+    "table_rgba": [
+      0.78,
+      0.72,
+      0.62,
+      1.0
+    ],
+    "table_top_z": 0.42,
+    "visual_extent": 1.5,
+    "visual_znear_ratio": 0.016
+  },
+  "scene_contract": {
+    "box_mass_kg": 0.06,
+    "camera_fovy_deg": 66.0,
+    "camera_name": "camera_wrist_right",
+    "cone": "elliptic",
+    "gripper_actuator": "right_finger1_ctrl",
+    "gripper_ctrlrange_rad": [
+      -0.7854,
+      0.0
+    ],
+    "impratio": 10.0,
+    "left_finger_collision_geoms": [
+      "finger_inner_right_collision_00",
+      "finger_inner_right_collision_01",
+      "finger_inner_right_collision_02",
+      "finger_inner_right_collision_03"
+    ],
+    "left_finger_note": "openarm_right_ee_inner_finger (+Y, left jaw in camera_wrist_right view)",
+    "mimic_equality": "openarm_right_ee_finger_joint_mimic",
+    "right_arm_actuators": [
+      "right_joint1_ctrl",
+      "right_joint2_ctrl",
+      "right_joint3_ctrl",
+      "right_joint4_ctrl",
+      "right_joint5_ctrl",
+      "right_joint6_ctrl",
+      "right_joint7_ctrl"
+    ],
+    "right_finger_collision_geoms": [
+      "finger_outer_right_collision_00",
+      "finger_outer_right_collision_01",
+      "finger_outer_right_collision_02",
+      "finger_outer_right_collision_03"
+    ],
+    "right_finger_note": "openarm_right_ee_outer_finger (-Y, right jaw in camera_wrist_right view)",
+    "support_geom": "eval_support_top",
+    "target_box_geom": "target_box_geom",
+    "timestep": 0.001
+  },
+  "seed": 113,
+  "summary": {
+    "invalid_count": 0,
+    "physics_failure_count": 50,
+    "physics_success_count": 50,
+    "rejected_candidates_during_search": 0,
+    "total_samples": 100
+  }
+}
