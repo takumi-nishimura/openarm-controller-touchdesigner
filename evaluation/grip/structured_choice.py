@@ -5,9 +5,9 @@ from __future__ import annotations
 import json
 from typing import Any, Final, Literal
 
-Choice = Literal["close", "wait", "uncertain"]
+Choice = Literal["close", "wait"]
 
-CHOICES: Final[tuple[Choice, ...]] = ("close", "wait", "uncertain")
+CHOICES: Final[tuple[Choice, ...]] = ("close", "wait")
 
 CHOICE_OUTPUT_FORMAT: Final[dict[str, Any]] = {
     "name": "grip_choice",
@@ -64,8 +64,8 @@ def parse_choice_json(text: object) -> Choice | None:
 
 
 __all__ = [
-    "CHOICE_OUTPUT_FORMAT",
     "CHOICES",
+    "CHOICE_OUTPUT_FORMAT",
     "Choice",
     "parse_choice_json",
 ]

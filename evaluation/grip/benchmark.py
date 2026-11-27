@@ -23,6 +23,7 @@ from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any, Literal, Protocol, cast
 
+from evaluation.grip import cuda_decisions
 from evaluation.grip.input_images import ImageInput, image_content_parts
 from evaluation.grip.structured_choice import (
     CHOICE_OUTPUT_FORMAT,
@@ -42,7 +43,7 @@ VIEW_PATHS: dict[ViewMode, tuple[str, ...]] = {
 }
 
 SCHEMA_VERSION = "1.0"
-PROMPT_VERSION = "grip-pilot-v1"
+PROMPT_VERSION = "grip-pilot-v4"
 QUESTION_NAME = "grip"
 VALID_CHOICES: frozenset[str] = frozenset(CHOICES)
 DEADLINE_MS_THRESHOLDS: tuple[int, ...] = (100, 200, 500)
@@ -56,8 +57,8 @@ DEFAULT_TIMEOUT_S = 20.0
 CHOICE_MAX_OUTPUT_TOKENS = 32
 
 GRASP_QUESTION = (
-    "Can the open gripper pick up the orange box by closing its jaws at the "
-    "current position and orientation, then lifting?"
+    "Given the current arrangement of the gripper fingers and the object, "
+    "should the robot close the gripper now to grasp the object?"
 )
 SHARED_QUESTION = f"Look at the robot's wrist-camera image. {GRASP_QUESTION}"
 VIEW_QUESTIONS: dict[ViewMode, str] = {
@@ -73,9 +74,9 @@ VIEW_QUESTIONS: dict[ViewMode, str] = {
     ),
 }
 CHOICE_DESCRIPTIONS: dict[Choice, str] = {
-    "close": "The box is positioned within reach between the jaws. Close now.",
-    "wait": "The box is outside the region the jaws can grip. Do not close yet.",
-    "uncertain": "The image does not give enough evidence about the box and jaws.",
+    "close": "Close now. The jaws are positioned to grasp the object.",
+    "wait": "Keep the jaws open. They are not positioned to grasp the object "
+    "now, or the image evidence is insufficient to decide.",
 }
 CHOICE_PROMPT_SUFFIX = (
     "\n"
@@ -168,13 +169,19 @@ def parse_openai_decisions_payload(
         else:
             return None, None, None, f"no answer matching question '{QUESTION_NAME}'"
 
-    ans_type = matched.get("type")
+    return _parse_choice_answer(matched)
+
+
+def _parse_choice_answer(
+    answer: dict[str, Any],
+) -> tuple[Choice | None, float | None, dict[str, float] | None, str | None]:
+    ans_type = answer.get("type")
     if ans_type == "refusal":
         return None, None, None, "refusal"
     if ans_type is not None and ans_type != "choice":
         return None, None, None, f"unexpected answer type: {ans_type!r}"
 
-    choice_raw = matched.get("choice")
+    choice_raw = answer.get("choice")
     if not isinstance(choice_raw, str):
         return None, None, None, "missing string 'choice' field"
     choice_norm = choice_raw.strip().lower()
@@ -182,26 +189,35 @@ def parse_openai_decisions_payload(
         return None, None, None, f"invalid choice value: {choice_raw!r}"
 
     confidence: float | None = None
-    raw_conf = matched.get("confidence")
-    if isinstance(raw_conf, (int, float)) and not isinstance(raw_conf, bool):
+    raw_conf = answer.get("confidence")
+    if (
+        isinstance(raw_conf, (int, float))
+        and not isinstance(raw_conf, bool)
+        and 0.0 <= raw_conf <= 1.0
+    ):
         confidence = float(raw_conf)
 
-    probabilities: dict[str, float] | None = None
-    raw_probs = matched.get("probabilities")
-    if isinstance(raw_probs, list):
-        parsed_probs: dict[str, float] = {}
-        for entry in raw_probs:
-            if isinstance(entry, dict):
-                value, probability = entry.get("value"), entry.get("probability")
-                if (
-                    isinstance(value, str)
-                    and value in CHOICES
-                    and type(probability) in (int, float)
-                ):
-                    parsed_probs[value] = float(probability)
-        probabilities = parsed_probs or None
+    raw_probs = answer.get("probabilities")
+    if isinstance(raw_probs, dict):
+        pairs = raw_probs.items()
+    elif isinstance(raw_probs, list):
+        pairs = (
+            (entry.get("value"), entry.get("probability"))
+            for entry in raw_probs
+            if isinstance(entry, dict)
+        )
+    else:
+        pairs = ()
+    probabilities = {
+        value: float(probability)
+        for value, probability in pairs
+        if isinstance(value, str)
+        and value in VALID_CHOICES
+        and type(probability) in (int, float)
+        and 0.0 <= probability <= 1.0
+    }
 
-    return cast(Choice, choice_norm), confidence, probabilities, None
+    return cast(Choice, choice_norm), confidence, probabilities or None, None
 
 
 def _post_json(
@@ -275,6 +291,59 @@ class AlwaysWaitBackend:
             prediction="wait",
             elapsed_ms=_elapsed_ms(self._clock, t0),
             response_model=self.model,
+        )
+
+
+class CudaDecisionBackend:
+    """Pinned multimodal checkpoints using their native choice runtimes."""
+
+    base_url: str | None = None
+
+    def __init__(self, name: str, clock: Callable[[], float] = time.perf_counter):
+        self.name = name
+        self._clock = clock
+        self._runtime = cuda_decisions.load_cuda_model(name)
+        self.model = self._runtime.model
+        self.settings = self._runtime.settings
+
+    def predict(
+        self, rgb_bytes: bytes, *, mime_type: str = "image/png"
+    ) -> BackendResult:
+        return self.predict_images((ImageInput(rgb_bytes, mime_type),), SHARED_QUESTION)
+
+    def predict_images(
+        self, images: Sequence[ImageInput], question: str
+    ) -> BackendResult:
+        start = self._clock()
+        questions = {
+            QUESTION_NAME: {
+                "type": "choice",
+                "instructions": question,
+                "criteria": dict(CHOICE_DESCRIPTIONS),
+            }
+        }
+        body = self._runtime.predict(questions, images)
+        answers = body.get("answers")
+        answer = answers.get(QUESTION_NAME) if isinstance(answers, dict) else None
+        if not isinstance(answer, dict):
+            return BackendResult(
+                status="invalid_response",
+                prediction=None,
+                elapsed_ms=_elapsed_ms(self._clock, start),
+                response_model=self.model,
+                error=f"missing answer to {QUESTION_NAME!r}",
+            )
+        choice, confidence, probabilities, error = _parse_choice_answer(answer)
+        usage = body.get("usage")
+        return BackendResult(
+            status="ok" if choice else "invalid_response",
+            prediction=choice,
+            elapsed_ms=_elapsed_ms(self._clock, start),
+            response_model=self.model,
+            usage=usage if isinstance(usage, dict) else None,
+            confidence=confidence,
+            probabilities=probabilities,
+            error=error,
         )
 
 
@@ -815,6 +884,7 @@ def compute_summary(
         "timeout_s": timeout_s,
         "prompt_version": PROMPT_VERSION,
         "choices": list(CHOICES),
+        "choice_descriptions": dict(CHOICE_DESCRIPTIONS),
         "counts": {
             "total_samples": total_samples,
             "labeled_samples": labeled_samples,
@@ -885,6 +955,12 @@ def create_backend(
     """Instantiate a configured benchmark backend."""
     if backend_name == "always-wait":
         return AlwaysWaitBackend(model=model or "always-wait")
+    if backend_name in cuda_decisions.CUDA_CHECKPOINTS:
+        if any(value is not None for value in (model, base_url, api_key_env)):
+            raise ValueError(
+                "CUDA backends use pinned checkpoints and no API settings."
+            )
+        return CudaDecisionBackend(backend_name)
     if backend_name == "openai-decisions":
         return OpenAIDecisionsBackend(
             base_url=base_url or DEFAULT_OPENAI_BASE_URL,
@@ -1047,6 +1123,8 @@ def run_benchmark(
     summary.update(
         view_mode=view_mode, input_image_count=len(path_fields), question=question
     )
+    if isinstance(active_backend, CudaDecisionBackend):
+        summary.update(response_format="native_choice", runtime=active_backend.settings)
     if isinstance(active_backend, LocalVLMBackend):
         summary.update(
             response_format="json_schema",
@@ -1098,6 +1176,7 @@ def build_arg_parser() -> argparse.ArgumentParser:
             "openai-terra",
             "local-vlm",
             "always-wait",
+            *cuda_decisions.CUDA_CHECKPOINTS,
         ),
         help="Inference backend to evaluate.",
     )

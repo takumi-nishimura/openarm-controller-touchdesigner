@@ -16,16 +16,14 @@ from typing import Any, Self
 import pytest
 
 from evaluation.grip import benchmark as bm
-
+from evaluation.grip import cuda_decisions
 
 EXPECTED_CHOICE_FORMAT = {
     "name": "grip_choice",
     "strict": True,
     "schema": {
         "type": "object",
-        "properties": {
-            "choice": {"type": "string", "enum": ["close", "wait", "uncertain"]}
-        },
+        "properties": {"choice": {"type": "string", "enum": ["close", "wait"]}},
         "required": ["choice"],
         "additionalProperties": False,
     },
@@ -213,8 +211,7 @@ def test_openai_decisions_payload_parse_and_clean_separation(
                         "confidence": 0.94,
                         "probabilities": [
                             {"value": "close", "probability": 0.94},
-                            {"value": "wait", "probability": 0.04},
-                            {"value": "uncertain", "probability": 0.02},
+                            {"value": "wait", "probability": 0.06},
                         ],
                     }
                 ],
@@ -235,7 +232,6 @@ def test_openai_decisions_payload_parse_and_clean_separation(
                         "probabilities": [
                             {"value": "close", "probability": 0.07},
                             {"value": "wait", "probability": 0.88},
-                            {"value": "uncertain", "probability": 0.05},
                         ],
                     }
                 ],
@@ -272,8 +268,8 @@ def test_openai_decisions_payload_parse_and_clean_separation(
         q = body["questions"][0]
         assert q["type"] == "choice"
         assert q["name"] == bm.QUESTION_NAME
-        assert [c["value"] for c in q["choices"]] == ["close", "wait", "uncertain"]
-        assert "orange box" in q["instructions"].lower()
+        assert [c["value"] for c in q["choices"]] == ["close", "wait"]
+        assert "grasp the object" in q["instructions"]
 
         # Clean separation: zero metadata/label/split/path leakage in outbound payload.
         for forbidden in (
@@ -302,8 +298,7 @@ def test_openai_decisions_payload_parse_and_clean_separation(
     assert pred_rows[0]["confidence"] == pytest.approx(0.94)
     assert pred_rows[0]["probabilities"] == {
         "close": 0.94,
-        "wait": 0.04,
-        "uncertain": 0.02,
+        "wait": 0.06,
     }
     assert "sk-test-dummy-key" not in (out_dir / "predictions.jsonl").read_text(
         encoding="utf-8"
@@ -389,14 +384,14 @@ def test_local_vlm_payload_strict_parse_and_optional_auth(
     assert [(r["status"], r["prediction"]) for r in pred_rows] == [
         ("ok", "close"),
         ("ok", "wait"),
-        ("ok", "uncertain"),
+        ("invalid_response", None),
         ("invalid_response", None),
         ("invalid_response", None),
         ("invalid_response", None),
     ]
     assert summary["response_format"] == "json_schema"
-    assert summary["counts"]["failures"]["invalid_response"] == 3
-    assert summary["counts"]["ok_count"] == 3
+    assert summary["counts"]["failures"]["invalid_response"] == 4
+    assert summary["counts"]["ok_count"] == 2
 
 
 def test_openai_responses_uses_the_same_schema_and_validates_status(
@@ -525,6 +520,9 @@ def test_view_modes_send_ordered_images_and_shared_question(
     )
 
     assert summary["view_mode"] == view_mode
+    assert summary["prompt_version"] == "grip-pilot-v4"
+    assert summary["choices"] == ["close", "wait"]
+    assert "insufficient" in summary["choice_descriptions"]["wait"]
     assert summary["counts"]["predictions"]["close"] == 1
     (payload,) = payloads
     if backend_name == "openai-decisions":
@@ -555,8 +553,73 @@ def test_view_modes_send_ordered_images_and_shared_question(
     else:
         assert imgs == [overlay]
         assert "fully closed" in text.lower()
+    assert "current arrangement of the gripper fingers and the object" in text
+    assert "should the robot close the gripper now to grasp the object?" in text
+    assert "lift" not in text.lower()
     assert "secret-sample" not in json.dumps(payload)
     assert "secret-group" not in json.dumps(payload)
+
+
+@pytest.mark.parametrize("backend_name", ("d1-2b", "intern-decision-2b"))
+def test_cuda_decisions_use_native_choices_and_ordered_images(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, backend_name: str
+) -> None:
+    dataset = _write_dataset(
+        tmp_path / "dataset",
+        [{"sample_id": "secret-sample", "group_id": "secret-group", "label": 1}],
+    )
+    observation = dataset / "observation"
+    manifest = observation / "manifest.jsonl"
+    row = json.loads(manifest.read_text())
+    row["main_rgb_path"] = "head.png"
+    manifest.write_text(json.dumps(row) + "\n")
+    head = TINY_PNG_BYTES + b"head"
+    (observation / "head.png").write_bytes(head)
+    requests = []
+
+    def predict(questions, images):
+        requests.append((questions, [image.rgb_bytes for image in images]))
+        return {
+            "answers": {
+                "grip": {
+                    "type": "choice",
+                    "choice": "close",
+                    "confidence": 0.7,
+                    "probabilities": {"close": 0.7, "wait": 0.3},
+                }
+            }
+        }
+
+    def load(name):
+        assert name == backend_name
+        return cuda_decisions.CudaDecisionModel(
+            "test-model", {"device": "cuda:0"}, predict
+        )
+
+    monkeypatch.setattr(cuda_decisions, "load_cuda_model", load)
+    out = tmp_path / "run"
+    summary = bm.run_benchmark(
+        dataset_dir=dataset,
+        out_dir=out,
+        backend_name=backend_name,
+        view_mode="main-wrist",
+    )
+
+    assert summary["response_format"] == "native_choice"
+    assert summary["runtime"]["device"] == "cuda:0"
+    assert summary["counts"]["predictions"]["close"] == 1
+    [(questions, images)] = requests
+    assert questions == {
+        "grip": {
+            "type": "choice",
+            "instructions": bm.VIEW_QUESTIONS["main-wrist"],
+            "criteria": bm.CHOICE_DESCRIPTIONS,
+        }
+    }
+    assert images == [head, TINY_PNG_BYTES]
+    saved = json.loads((out / "predictions.jsonl").read_text())
+    assert saved["probabilities"] == {"close": 0.7, "wait": 0.3}
+    assert saved["confidence"] == 0.7
 
 
 def test_http_error_timeout_and_invalid_decisions_response_no_retry(
@@ -716,7 +779,7 @@ def test_metrics_denominators_coverage_deadlines_and_clean_backend_boundary(
         ("ok", "wait", 40.0),
         ("timeout", None, 1000.0),
         ("ok", "close", 120.0),
-        ("ok", "uncertain", 260.0),
+        ("ok", "wait", 260.0),
         ("http_error", None, 20.0),
         ("ok", "close", 400.0),
     ]
@@ -790,13 +853,13 @@ def test_metrics_denominators_coverage_deadlines_and_clean_backend_boundary(
     assert metrics["close_recall"]["coverage"] == pytest.approx(0.75)
     assert metrics["close_recall"]["rate_among_ok"] == pytest.approx(2 / 3)
 
-    # Abstention: uncertain across total_samples (8), with coverage 6/8.
-    assert metrics["abstention"]["numerator"] == 1
+    # Preserve the abstention summary for readers of historical three-choice runs.
+    assert metrics["abstention"]["numerator"] == 0
     assert metrics["abstention"]["denominator"] == 8
-    assert metrics["abstention"]["rate"] == pytest.approx(1 / 8)
+    assert metrics["abstention"]["rate"] == 0.0
     assert metrics["abstention"]["ok_count"] == 6
     assert metrics["abstention"]["coverage"] == pytest.approx(6 / 8)
-    assert metrics["abstention"]["rate_among_ok"] == pytest.approx(1 / 6)
+    assert metrics["abstention"]["rate_among_ok"] == 0.0
 
     # Deadline-qualified close recall at 100/200/500 ms over positive_samples (4).
     dcr = metrics["deadline_close_recall"]

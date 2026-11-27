@@ -115,17 +115,71 @@ uv run --locked python -m evaluation.grip --pilot --seed 113 --groups 50 --out o
 a placement stay in that split. The Pilot favors small fore/aft and vertical
 offset pairs and confirms each outcome with the existing physics oracle.
 
-Run the same evaluation split through the available backends. Load
+Use [the frozen Pilot fixture](fixtures/pilot-113/) for comparisons. It contains
+the exact 480 × 300 wrist PNGs, manifest, physics labels, and splits from the
+Mercury EGL Pilot, including 10 development and 40 evaluation placements.
+The example above generates a separate dataset. The frozen fixture supports
+wrist-image scoring. Rendering new views requires the original simulation
+snapshots referenced by the evaluator records.
+
+Verify the fixture from the repository root before a comparison:
+
+```bash
+(cd evaluation/grip/fixtures/pilot-113 && sha256sum --check --quiet SHA256SUMS)
+```
+
+Only include controlled runs in a comparison or plot. Match the fixture
+checksum, selected sample IDs and labels, view and image order, question and
+choice descriptions and order, output contract, and scoring rules. Record the
+full input text and model settings. For latency comparisons, also keep the
+measurement boundaries, warm-up policy, concurrency, and timeout policy fixed.
+Control the execution environment when comparing speed under the same runtime
+conditions. In an experiment that varies one of these factors, identify it
+explicitly and keep the other comparison conditions fixed. A shared seed and
+matching sample IDs alone do not establish matching image bytes. The historical
+and Mercury Pilot runs in the measurement data have differing protocols.
+
+The `grip-pilot-v4` prompt asks whether to close the gripper now to grasp the
+object, given its arrangement relative to the gripper fingers. The two choices
+are `close` and `wait`.
+`wait` covers both an unsuitable wrist pose and insufficient visual evidence.
+Benchmark summaries record the version, question, and choice descriptions.
+
+Run the frozen evaluation split through the available backends. Load
 `OPENAI_API_KEY` into the invoking shell for OpenAI Decisions, or supply the
 base URL and model ID of a running local OpenAI-compatible vision server.
 
 ```bash
-uv run --locked python -m evaluation.grip.benchmark --dataset out/grip-pilot-113 --split eval --backend openai-decisions --out out/grip-pilot-openai
-uv run --locked python -m evaluation.grip.benchmark --dataset out/grip-pilot-113 --split eval --backend local-vlm --base-url http://127.0.0.1:8000/v1 --model Qwen/Qwen2.5-VL-3B-Instruct --out out/grip-pilot-local
+uv run --locked python -m evaluation.grip.benchmark --dataset evaluation/grip/fixtures/pilot-113 --split eval --backend openai-decisions --out out/grip-pilot-openai
+uv run --locked python -m evaluation.grip.benchmark --dataset evaluation/grip/fixtures/pilot-113 --split eval --backend local-vlm --base-url http://127.0.0.1:8000/v1 --model Qwen/Qwen2.5-VL-3B-Instruct --out out/grip-pilot-local
 ```
 
 Use `--split dev --limit 2` for a quick connection check. The output directory
 must be new. It contains the per-image responses and aggregate metrics.
+
+## Local CUDA decision models
+
+The `d1-2b` and `intern-decision-2b` backends use the native choice interfaces
+of [LiquidAI/d1-2B](https://huggingface.co/LiquidAI/d1-2B) and
+[Intern-Decision-2B](https://huggingface.co/internlm/Intern-Decision-2B).
+They use the shared Grip question and choices for all three `--view-mode` values.
+Per-image output includes each model's choice and option probabilities.
+
+From the repository root, use the standalone Python 3.12 `uv` script with a
+BF16-capable NVIDIA GPU. It downloads the pinned model weights and Python
+inference code to the Hugging Face cache on first use. The script keeps the
+CUDA dependencies separate from the controller's Python 3.11 environment.
+
+```bash
+uv run --script run-grip-cuda.py --dataset evaluation/grip/fixtures/pilot-113 --split eval --backend d1-2b --out out/grip-pilot-d1-2b
+uv run --script run-grip-cuda.py --dataset out/grip-cases-views --view-mode main-wrist --backend intern-decision-2b --out out/grip-head-intern-decision-2b
+```
+
+`summary.json` records the checkpoint revision, CUDA device, GPU, dtype and
+runtime versions. The per-request duration includes image preparation, native
+inference and answer validation, including work triggered by the first request.
+It excludes checkpoint loading and scoring. The RTX 4090 runs are recorded as
+`mercury-cuda-*` in [the measurement data](report/results.json).
 
 Run the focused regression suite:
 
