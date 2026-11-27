@@ -360,6 +360,205 @@
         "source_dataset": "out/grip-cases-v1-verified"
       },
       "views_commit": "49b6c87b89d08d10f0842ff561d77da577e2aa8a"
+    },
+    "mercury_cuda_views": {
+      "artifact": "out/grip-cuda-views",
+      "milestone": "designed-cases",
+      "seed": 42,
+      "placement_count": 1,
+      "image_size_px": [
+        960,
+        600
+      ],
+      "camera": "camera_wrist_right",
+      "counts": {
+        "invalid_count": 0,
+        "physics_failure_count": 3,
+        "physics_success_count": 3,
+        "rejected_candidates_during_search": 0,
+        "total_samples": 6
+      },
+      "generator_commit": "73fa61143747d6ffc6660bd7c319b8f8403830c6",
+      "mujoco_version": "3.17.0",
+      "openarm_control_version": "0.5.0",
+      "openarm_mujoco_version": "2.3.0",
+      "pedestal_xml_sha256": "49e9dfdf0bfec4f818955a4c39e91deb6b2ab2326b13f48421c1c9cd2f12dadb",
+      "labels_sha256": "4481ad33af3667b798e4a778bc56333728035242f8dd7261569962bd7e663755",
+      "renderer": "OSMesa",
+      "regenerated_from": "designed_head_views",
+      "observation_manifest_sha256": "ecc341f49d46413bdf7b6f25f82108e370a188d7fa24d3ce3f33b2c706cec5d1",
+      "generated_at_utc": "2026-11-26T12:56:27.978786+00:00",
+      "samples": [
+        {
+          "sample_id": "smp_f8952217086f",
+          "group_id": "grp_0000",
+          "case": "centered",
+          "label": 1,
+          "hand_offset_xyz_mm": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "images_sha256": {
+            "wrist": "a4680015ea08de714c3b9ed5e9647c9f5b8024fdf9f7bb1d6b0d6c880eaed918",
+            "head": "b75199ff746eba6ff9ac259de79901f1cd28409232c4fdcbbbcc5caa9ca3dd27",
+            "overlay": "2729f5e20432ae050475c82f73d59d374375c06238df2cbb4f405d20303b7684"
+          }
+        },
+        {
+          "sample_id": "smp_2eae5ff5ba7e",
+          "group_id": "grp_0000",
+          "case": "near_reach",
+          "label": 1,
+          "hand_offset_xyz_mm": [
+            -25.0,
+            0.0,
+            0.0
+          ],
+          "images_sha256": {
+            "wrist": "d59090cd631b734ce9c2202798c9022aaba9f18ea3912bbcfc4413ce05a515ef",
+            "head": "cadbcdfa30dcf0a519252d2e1cb5e12541f9a8bb161db16216a2cf96ceabdbd5",
+            "overlay": "85b8f6c66b4a1558ae617bbe3f8195126d395f188ef67661ba96a44d30064616"
+          }
+        },
+        {
+          "sample_id": "smp_27eac870d0b5",
+          "group_id": "grp_0000",
+          "case": "raised_reachable",
+          "label": 1,
+          "hand_offset_xyz_mm": [
+            0.0,
+            0.0,
+            29.0
+          ],
+          "images_sha256": {
+            "wrist": "4d0312c73ac4e26d68cac7d5c92504091e194d3229224f96b512ee15d7a19691",
+            "head": "f9dad2a6b03039317f66a410392739f83eefaf705529719b678a46714452563a",
+            "overlay": "e7050a73912cb0dc1e77f3809718271c30c90e837d281d0cac12814e46241eed"
+          }
+        },
+        {
+          "sample_id": "smp_7c09efd354ce",
+          "group_id": "grp_0000",
+          "case": "too_short",
+          "label": 0,
+          "hand_offset_xyz_mm": [
+            -39.0,
+            0.0,
+            0.0
+          ],
+          "images_sha256": {
+            "wrist": "0027770932f3daf96f940f355a6ccf4d6e47c7c22ebd3575a84099d0bb150c18",
+            "head": "c60d86298b8ddf2b2445a45e749273a8670f5c674c55989430ab16afe7b13315",
+            "overlay": "48b2000c2b5fd7d07f3f3fcc893ee7ecd93c666daef24ed5dfeb9592d9a660ca"
+          }
+        },
+        {
+          "sample_id": "smp_0af66c5670f7",
+          "group_id": "grp_0000",
+          "case": "too_high",
+          "label": 0,
+          "hand_offset_xyz_mm": [
+            0.0,
+            0.0,
+            48.0
+          ],
+          "images_sha256": {
+            "wrist": "4bddd120df5a8e4824c950b8c5abaee115cb874a1498fe623dbe054279c5c5b2",
+            "head": "630451d227b847cba1ef516e522e8df35d4b2e99fa7aeb27750f47a0de6e0ea0",
+            "overlay": "6e90d61f21609b7f3fac419147128bb14fb03a41c850168f04279b6ff87d9dfa"
+          }
+        },
+        {
+          "sample_id": "smp_80b8642c48ad",
+          "group_id": "grp_0000",
+          "case": "short_lateral",
+          "label": 0,
+          "hand_offset_xyz_mm": [
+            -25.0,
+            16.0,
+            0.0
+          ],
+          "images_sha256": {
+            "wrist": "544e2d55f247bcfaa180480028ea8159f7bd184f88ff1c5cb52fe8cb8743418c",
+            "head": "1726ec99f8b5665fd2342ec2eb1bc89efd61e712d05115781400b86b7115dd27",
+            "overlay": "49fdc7ea025e4eed06ff3f17c1dc48843a7fd887beb6f1b1f927146b2b292ffb"
+          }
+        }
+      ],
+      "view_config": {
+        "count": 6,
+        "image_size": [
+          960,
+          600
+        ],
+        "main_camera": {
+          "fovy_deg": 52.0,
+          "name": "camera_head_right",
+          "position_relative_m": [
+            0.038000000000000006,
+            -0.0315,
+            0.10999999999999988
+          ],
+          "quaternion_relative_wxyz": [
+            0.6861026711361858,
+            0.17106467975532158,
+            -0.17106467975532158,
+            -0.686102671136186
+          ],
+          "reference_frame": "arm_origin",
+          "resolution_px": [
+            1280,
+            720
+          ],
+          "source": "openarm-mujoco 2.3.0 v2/cell/cell.xml",
+          "source_xml_sha256": "fe54a6fb0fddd5a55996f6bb3fc97703d94c30df2499a0b313a876c1c088a93e"
+        },
+        "overlay": {
+          "finger_target_rad": 0.0,
+          "opacity": 0.4,
+          "rgb": [
+            38,
+            223,
+            255
+          ]
+        },
+        "source_dataset": "out/grip-cuda-cases-osmesa"
+      }
+    },
+    "mercury_cuda_pilot": {
+      "artifact": "out/grip-cuda-pilot",
+      "milestone": "pilot",
+      "seed": 113,
+      "placement_count": 50,
+      "image_size_px": [
+        480,
+        300
+      ],
+      "camera": "camera_wrist_right",
+      "counts": {
+        "invalid_count": 0,
+        "physics_failure_count": 50,
+        "physics_success_count": 50,
+        "rejected_candidates_during_search": 0,
+        "total_samples": 100
+      },
+      "generator_commit": "73fa61143747d6ffc6660bd7c319b8f8403830c6",
+      "mujoco_version": "3.17.0",
+      "openarm_control_version": "0.5.0",
+      "openarm_mujoco_version": "2.3.0",
+      "pedestal_xml_sha256": "49e9dfdf0bfec4f818955a4c39e91deb6b2ab2326b13f48421c1c9cd2f12dadb",
+      "labels_sha256": "8d307d8a8e4f2d25ffb5e466593456301ed1e277a1ce399fff8d7d662c754692",
+      "renderer": "EGL",
+      "regenerated_from": "pilot",
+      "observation_manifest_sha256": "d3afa2f820884057d1b4048a42c6b85792ab08d07a9d91fcb9d31ef6b679e648",
+      "generated_at_utc": "2026-11-26T12:56:09.728383+00:00",
+      "placement_split_counts": {
+        "eval": 40,
+        "dev": 10
+      },
+      "placement_splits_sha256": "adf4179071aaf912701d9c18d5d30b32282e05b8652c66bcb39820ac6a0821d8",
+      "observation_images_sha256": "aa49c6f072c11698b2f65bb18597667aeef0fe1cab95ea22a83235336d44f5b7"
     }
   },
   "view_config": {
@@ -5752,6 +5951,3254 @@
           "status": "ok",
           "decision": "close",
           "elapsed_ms": 11157.2702
+        }
+      ]
+    },
+    "mercury-cuda-d1-2b-wrist": {
+      "dataset": "mercury_cuda_views",
+      "split": "all",
+      "view_mode": "wrist",
+      "input_condition": "wrist",
+      "image_count": 1,
+      "output_mode": "native_choice",
+      "backend": "d1-2b",
+      "model": "LiquidAI/d1-2B",
+      "source_artifact": "out/grip-cuda-fla-runs/d1-2b-wrist",
+      "summary_sha256": "65555f8f077ee470263c957aa12d79dc12a1fd77dbd1970686122c21493de649",
+      "predictions_sha256": "2412989bd67f434b8aa64b3d27199bd16ac2f6c08286e1bfb6fab538faa3c50e",
+      "settings": {
+        "generated_at_utc": "2026-11-26T13:20:53.634644+00:00",
+        "question": "Look at the robot's wrist-camera image. Can the open gripper pick up the orange box by closing its jaws at the current position and orientation, then lifting?",
+        "choices": [
+          "close",
+          "wait",
+          "uncertain"
+        ],
+        "host": "mercury",
+        "warmup_excluded": false,
+        "device": "cuda:0",
+        "dtype": "bfloat16",
+        "flash_linear_attention": "0.4.2",
+        "gpu": "NVIDIA GeForce RTX 4090",
+        "revision": "a6bce774e6dde338dcc3036ceb5d91f78bf4c19e",
+        "torch": "2.9.1+cu128",
+        "transformers": "5.19.0"
+      },
+      "metrics": {
+        "n": 6,
+        "positive": 3,
+        "negative": 3,
+        "ok": 6,
+        "responses": {
+          "close": 6,
+          "wait": 0,
+          "uncertain": 0
+        },
+        "failures": {},
+        "correct": 3,
+        "correct_close": 3,
+        "false_close": 3,
+        "deadline_correct_close": {
+          "100ms": 2,
+          "200ms": 2,
+          "500ms": 2
+        },
+        "deadline_false_close": {
+          "100ms": 3,
+          "200ms": 3,
+          "500ms": 3
+        },
+        "p50_ms": 42.3993,
+        "p95_ms": 1409.119025,
+        "p95_method": "linear_interpolation"
+      },
+      "predictions": [
+        {
+          "sample_id": "smp_f8952217086f",
+          "group_id": "grp_0000",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1864.2941,
+          "confidence": 0.6407635671696522,
+          "probabilities": {
+            "close": 0.6407635671696522,
+            "uncertain": 0.1504983948768113,
+            "wait": 0.20873803795353643
+          }
+        },
+        {
+          "sample_id": "smp_2eae5ff5ba7e",
+          "group_id": "grp_0000",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 42.5785,
+          "confidence": 0.6101901490992272,
+          "probabilities": {
+            "close": 0.6101901490992272,
+            "uncertain": 0.1501740610555517,
+            "wait": 0.239635789845221
+          }
+        },
+        {
+          "sample_id": "smp_27eac870d0b5",
+          "group_id": "grp_0000",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 42.2201,
+          "confidence": 0.5926416375031229,
+          "probabilities": {
+            "close": 0.5926416375031229,
+            "uncertain": 0.1267753642691535,
+            "wait": 0.2805829982277236
+          }
+        },
+        {
+          "sample_id": "smp_7c09efd354ce",
+          "group_id": "grp_0000",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 43.5938,
+          "confidence": 0.6189785012407205,
+          "probabilities": {
+            "close": 0.6189785012407205,
+            "uncertain": 0.15962502334474873,
+            "wait": 0.2213964754145308
+          }
+        },
+        {
+          "sample_id": "smp_0af66c5670f7",
+          "group_id": "grp_0000",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 41.373,
+          "confidence": 0.42108943349506534,
+          "probabilities": {
+            "close": 0.42108943349506534,
+            "uncertain": 0.15782113300986944,
+            "wait": 0.42108943349506534
+          }
+        },
+        {
+          "sample_id": "smp_80b8642c48ad",
+          "group_id": "grp_0000",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 38.986,
+          "confidence": 0.5236078033079423,
+          "probabilities": {
+            "close": 0.5236078033079423,
+            "uncertain": 0.14825961568686552,
+            "wait": 0.32813258100519227
+          }
+        }
+      ]
+    },
+    "mercury-cuda-d1-2b-main-wrist": {
+      "dataset": "mercury_cuda_views",
+      "split": "all",
+      "view_mode": "main-wrist",
+      "input_condition": "main-wrist",
+      "image_count": 2,
+      "output_mode": "native_choice",
+      "backend": "d1-2b",
+      "model": "LiquidAI/d1-2B",
+      "source_artifact": "out/grip-cuda-fla-runs/d1-2b-main-wrist",
+      "summary_sha256": "226dda8e577320ef63126bcc68de1acd9cc82e709866ab6ce9458e73c949037a",
+      "predictions_sha256": "4d79fdcc545cffdc427f70d15cd7cd29465a14cdb4cd163852a8ec1ff2317fb9",
+      "settings": {
+        "generated_at_utc": "2026-11-26T13:20:58.949032+00:00",
+        "question": "The first image is from the fixed main camera. The second image is from the wrist camera at the same instant. Use both views. Can the open gripper pick up the orange box by closing its jaws at the current position and orientation, then lifting?",
+        "choices": [
+          "close",
+          "wait",
+          "uncertain"
+        ],
+        "host": "mercury",
+        "warmup_excluded": false,
+        "device": "cuda:0",
+        "dtype": "bfloat16",
+        "flash_linear_attention": "0.4.2",
+        "gpu": "NVIDIA GeForce RTX 4090",
+        "revision": "a6bce774e6dde338dcc3036ceb5d91f78bf4c19e",
+        "torch": "2.9.1+cu128",
+        "transformers": "5.19.0"
+      },
+      "metrics": {
+        "n": 6,
+        "positive": 3,
+        "negative": 3,
+        "ok": 6,
+        "responses": {
+          "close": 5,
+          "wait": 1,
+          "uncertain": 0
+        },
+        "failures": {},
+        "correct": 4,
+        "correct_close": 3,
+        "false_close": 2,
+        "deadline_correct_close": {
+          "100ms": 2,
+          "200ms": 2,
+          "500ms": 2
+        },
+        "deadline_false_close": {
+          "100ms": 2,
+          "200ms": 2,
+          "500ms": 2
+        },
+        "p50_ms": 91.63725,
+        "p95_ms": 1464.810675,
+        "p95_method": "linear_interpolation"
+      },
+      "predictions": [
+        {
+          "sample_id": "smp_f8952217086f",
+          "group_id": "grp_0000",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1920.7422,
+          "confidence": 0.6600486379863026,
+          "probabilities": {
+            "close": 0.6600486379863026,
+            "uncertain": 0.13474819926455697,
+            "wait": 0.20520316274914036
+          }
+        },
+        {
+          "sample_id": "smp_2eae5ff5ba7e",
+          "group_id": "grp_0000",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 97.0161,
+          "confidence": 0.6600486379863026,
+          "probabilities": {
+            "close": 0.6600486379863026,
+            "uncertain": 0.13474819926455703,
+            "wait": 0.20520316274914038
+          }
+        },
+        {
+          "sample_id": "smp_27eac870d0b5",
+          "group_id": "grp_0000",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 91.0229,
+          "confidence": 0.5488897342650126,
+          "probabilities": {
+            "close": 0.5488897342650126,
+            "uncertain": 0.17880880258128257,
+            "wait": 0.2723014631537048
+          }
+        },
+        {
+          "sample_id": "smp_7c09efd354ce",
+          "group_id": "grp_0000",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 90.0984,
+          "confidence": 0.6680813819842126,
+          "probabilities": {
+            "close": 0.6680813819842126,
+            "uncertain": 0.12421814767586987,
+            "wait": 0.20770047033991754
+          }
+        },
+        {
+          "sample_id": "smp_0af66c5670f7",
+          "group_id": "grp_0000",
+          "label": 0,
+          "status": "ok",
+          "decision": "wait",
+          "elapsed_ms": 90.6906,
+          "confidence": 0.4594560873277634,
+          "probabilities": {
+            "close": 0.30170529332552654,
+            "uncertain": 0.23883861934671002,
+            "wait": 0.4594560873277634
+          }
+        },
+        {
+          "sample_id": "smp_80b8642c48ad",
+          "group_id": "grp_0000",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 92.2516,
+          "confidence": 0.6184777841149707,
+          "probabilities": {
+            "close": 0.6184777841149707,
+            "uncertain": 0.13863168001370763,
+            "wait": 0.2428905358713218
+          }
+        }
+      ]
+    },
+    "mercury-cuda-d1-2b-wrist-overlay": {
+      "dataset": "mercury_cuda_views",
+      "split": "all",
+      "view_mode": "wrist-overlay",
+      "input_condition": "wrist-overlay",
+      "image_count": 1,
+      "output_mode": "native_choice",
+      "backend": "d1-2b",
+      "model": "LiquidAI/d1-2B",
+      "source_artifact": "out/grip-cuda-fla-runs/d1-2b-wrist-overlay",
+      "summary_sha256": "00fa58e760cc3b30542ab9e42921553717dc3cb575e17a65065a2a7344c49d8e",
+      "predictions_sha256": "f441c948bfc18196b6c0892ddb802604ab8fdb16e8399df7694cc7b1309b584d",
+      "settings": {
+        "generated_at_utc": "2026-11-26T13:21:04.013394+00:00",
+        "question": "The wrist-camera image shows the current open gripper. The translucent cyan overlay shows the fingers fully closed in empty space at that same wrist pose. Use the overlay as a guide. Can the open gripper pick up the orange box by closing its jaws at the current position and orientation, then lifting?",
+        "choices": [
+          "close",
+          "wait",
+          "uncertain"
+        ],
+        "host": "mercury",
+        "warmup_excluded": false,
+        "device": "cuda:0",
+        "dtype": "bfloat16",
+        "flash_linear_attention": "0.4.2",
+        "gpu": "NVIDIA GeForce RTX 4090",
+        "revision": "a6bce774e6dde338dcc3036ceb5d91f78bf4c19e",
+        "torch": "2.9.1+cu128",
+        "transformers": "5.19.0"
+      },
+      "metrics": {
+        "n": 6,
+        "positive": 3,
+        "negative": 3,
+        "ok": 6,
+        "responses": {
+          "close": 0,
+          "wait": 6,
+          "uncertain": 0
+        },
+        "failures": {},
+        "correct": 3,
+        "correct_close": 0,
+        "false_close": 0,
+        "deadline_correct_close": {
+          "100ms": 0,
+          "200ms": 0,
+          "500ms": 0
+        },
+        "deadline_false_close": {
+          "100ms": 0,
+          "200ms": 0,
+          "500ms": 0
+        },
+        "p50_ms": 41.7513,
+        "p95_ms": 1413.3625749999999,
+        "p95_method": "linear_interpolation"
+      },
+      "predictions": [
+        {
+          "sample_id": "smp_f8952217086f",
+          "group_id": "grp_0000",
+          "label": 1,
+          "status": "ok",
+          "decision": "wait",
+          "elapsed_ms": 1870.2006,
+          "confidence": 0.47714837607227534,
+          "probabilities": {
+            "close": 0.3440200234752564,
+            "uncertain": 0.17883160045246832,
+            "wait": 0.47714837607227534
+          }
+        },
+        {
+          "sample_id": "smp_2eae5ff5ba7e",
+          "group_id": "grp_0000",
+          "label": 1,
+          "status": "ok",
+          "decision": "wait",
+          "elapsed_ms": 42.8485,
+          "confidence": 0.4421043098038166,
+          "probabilities": {
+            "close": 0.38427109853371527,
+            "uncertain": 0.1736245916624681,
+            "wait": 0.4421043098038166
+          }
+        },
+        {
+          "sample_id": "smp_27eac870d0b5",
+          "group_id": "grp_0000",
+          "label": 1,
+          "status": "ok",
+          "decision": "wait",
+          "elapsed_ms": 41.6575,
+          "confidence": 0.4421043098038166,
+          "probabilities": {
+            "close": 0.38427109853371527,
+            "uncertain": 0.17362459166246813,
+            "wait": 0.4421043098038166
+          }
+        },
+        {
+          "sample_id": "smp_7c09efd354ce",
+          "group_id": "grp_0000",
+          "label": 0,
+          "status": "ok",
+          "decision": "wait",
+          "elapsed_ms": 41.8451,
+          "confidence": 0.4499994636948963,
+          "probabilities": {
+            "close": 0.37327533503523463,
+            "uncertain": 0.17672520126986904,
+            "wait": 0.4499994636948963
+          }
+        },
+        {
+          "sample_id": "smp_0af66c5670f7",
+          "group_id": "grp_0000",
+          "label": 0,
+          "status": "ok",
+          "decision": "wait",
+          "elapsed_ms": 41.2041,
+          "confidence": 0.4371156879427818,
+          "probabilities": {
+            "close": 0.3460333965383839,
+            "uncertain": 0.21685091551883445,
+            "wait": 0.4371156879427818
+          }
+        },
+        {
+          "sample_id": "smp_80b8642c48ad",
+          "group_id": "grp_0000",
+          "label": 0,
+          "status": "ok",
+          "decision": "wait",
+          "elapsed_ms": 38.685,
+          "confidence": 0.5250325767291175,
+          "probabilities": {
+            "close": 0.24857385175726338,
+            "uncertain": 0.22639357151361908,
+            "wait": 0.5250325767291175
+          }
+        }
+      ]
+    },
+    "mercury-cuda-d1-2b-pilot": {
+      "dataset": "mercury_cuda_pilot",
+      "split": "eval",
+      "view_mode": "wrist",
+      "input_condition": "pilot",
+      "image_count": 1,
+      "output_mode": "native_choice",
+      "backend": "d1-2b",
+      "model": "LiquidAI/d1-2B",
+      "source_artifact": "out/grip-cuda-fla-runs/d1-2b-pilot",
+      "summary_sha256": "76de84d880d02b2fa8452f8e58e55a8886197f3a32e41e53c2fde36fc44862ce",
+      "predictions_sha256": "9140f4ac7b8e2635bc98a0e4fdc4ed6b6f8ea82b014dacb93776aa4f7916e021",
+      "settings": {
+        "generated_at_utc": "2026-11-26T13:21:10.123807+00:00",
+        "question": "Look at the robot's wrist-camera image. Can the open gripper pick up the orange box by closing its jaws at the current position and orientation, then lifting?",
+        "choices": [
+          "close",
+          "wait",
+          "uncertain"
+        ],
+        "host": "mercury",
+        "warmup_excluded": false,
+        "device": "cuda:0",
+        "dtype": "bfloat16",
+        "flash_linear_attention": "0.4.2",
+        "gpu": "NVIDIA GeForce RTX 4090",
+        "revision": "a6bce774e6dde338dcc3036ceb5d91f78bf4c19e",
+        "torch": "2.9.1+cu128",
+        "transformers": "5.19.0"
+      },
+      "metrics": {
+        "n": 80,
+        "positive": 40,
+        "negative": 40,
+        "ok": 80,
+        "responses": {
+          "close": 78,
+          "wait": 2,
+          "uncertain": 0
+        },
+        "failures": {},
+        "correct": 42,
+        "correct_close": 40,
+        "false_close": 38,
+        "deadline_correct_close": {
+          "100ms": 40,
+          "200ms": 40,
+          "500ms": 40
+        },
+        "deadline_false_close": {
+          "100ms": 37,
+          "200ms": 37,
+          "500ms": 37
+        },
+        "p50_ms": 16.560899999999997,
+        "p95_ms": 17.68813,
+        "p95_method": "linear_interpolation",
+        "paired": {
+          "pairs": 40,
+          "both_correct": 2,
+          "positive_close_without_negative_close": 2,
+          "higher_positive_close_score": 19,
+          "equal_close_score": 0,
+          "lower_positive_close_score": 21
+        }
+      },
+      "predictions": [
+        {
+          "sample_id": "smp_b18e5cb491b1",
+          "group_id": "grp_0000",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1844.1221,
+          "confidence": 0.5961929400752339,
+          "probabilities": {
+            "close": 0.5961929400752339,
+            "uncertain": 0.14672920419301547,
+            "wait": 0.25707785573175046
+          }
+        },
+        {
+          "sample_id": "smp_471e9fb455ce",
+          "group_id": "grp_0000",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 19.3316,
+          "confidence": 0.6072912423487161,
+          "probabilities": {
+            "close": 0.6072912423487161,
+            "uncertain": 0.11831733353605696,
+            "wait": 0.27439142411522693
+          }
+        },
+        {
+          "sample_id": "smp_2496c029148b",
+          "group_id": "grp_0001",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 17.9653,
+          "confidence": 0.6321791011247614,
+          "probabilities": {
+            "close": 0.6321791011247614,
+            "uncertain": 0.14170282766727407,
+            "wait": 0.22611807120796454
+          }
+        },
+        {
+          "sample_id": "smp_3986de983a00",
+          "group_id": "grp_0001",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 17.702,
+          "confidence": 0.6254134585250362,
+          "probabilities": {
+            "close": 0.6254134585250362,
+            "uncertain": 0.14018631013978622,
+            "wait": 0.23440023133517762
+          }
+        },
+        {
+          "sample_id": "smp_75debfd8ca02",
+          "group_id": "grp_0002",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 17.6843,
+          "confidence": 0.6273363973462524,
+          "probabilities": {
+            "close": 0.6273363973462524,
+            "uncertain": 0.1776303801993536,
+            "wait": 0.19503322245439414
+          }
+        },
+        {
+          "sample_id": "smp_d634d054d6ba",
+          "group_id": "grp_0002",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 17.673,
+          "confidence": 0.6144028343998389,
+          "probabilities": {
+            "close": 0.6144028343998389,
+            "uncertain": 0.14430695676624988,
+            "wait": 0.24129020883391114
+          }
+        },
+        {
+          "sample_id": "smp_85dbdf151a82",
+          "group_id": "grp_0003",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 17.6559,
+          "confidence": 0.6205121895139697,
+          "probabilities": {
+            "close": 0.6205121895139697,
+            "uncertain": 0.1676761916849992,
+            "wait": 0.21181161880103105
+          }
+        },
+        {
+          "sample_id": "smp_15f8ec1215af",
+          "group_id": "grp_0003",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 17.6672,
+          "confidence": 0.6294422274762439,
+          "probabilities": {
+            "close": 0.6294422274762439,
+            "uncertain": 0.13464758907404253,
+            "wait": 0.23591018344971346
+          }
+        },
+        {
+          "sample_id": "smp_c31cc8429a0f",
+          "group_id": "grp_0004",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 17.6874,
+          "confidence": 0.4756197690237166,
+          "probabilities": {
+            "close": 0.4756197690237166,
+            "uncertain": 0.1478658923794456,
+            "wait": 0.3765143385968378
+          }
+        },
+        {
+          "sample_id": "smp_a993754bc4c3",
+          "group_id": "grp_0004",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 17.5974,
+          "confidence": 0.6183788043956562,
+          "probabilities": {
+            "close": 0.6183788043956562,
+            "uncertain": 0.11497681527347613,
+            "wait": 0.2666443803308676
+          }
+        },
+        {
+          "sample_id": "smp_19c279c08a6e",
+          "group_id": "grp_0005",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 17.6213,
+          "confidence": 0.6422602463430249,
+          "probabilities": {
+            "close": 0.6422602463430249,
+            "uncertain": 0.15806684127931828,
+            "wait": 0.19967291237765686
+          }
+        },
+        {
+          "sample_id": "smp_7d14429ef1d5",
+          "group_id": "grp_0005",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 16.7905,
+          "confidence": 0.6032738661842435,
+          "probabilities": {
+            "close": 0.6032738661842435,
+            "uncertain": 0.14847189281457712,
+            "wait": 0.2482542410011794
+          }
+        },
+        {
+          "sample_id": "smp_824359ccf871",
+          "group_id": "grp_0006",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 16.4096,
+          "confidence": 0.6279222258146446,
+          "probabilities": {
+            "close": 0.6279222258146446,
+            "uncertain": 0.1474823038238658,
+            "wait": 0.2245954703614895
+          }
+        },
+        {
+          "sample_id": "smp_32cdacf0a4e5",
+          "group_id": "grp_0006",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 16.4661,
+          "confidence": 0.607391272001011,
+          "probabilities": {
+            "close": 0.607391272001011,
+            "uncertain": 0.14266012642091158,
+            "wait": 0.24994860157807747
+          }
+        },
+        {
+          "sample_id": "smp_d24f8b9bbea2",
+          "group_id": "grp_0007",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 16.3807,
+          "confidence": 0.607897314770348,
+          "probabilities": {
+            "close": 0.607897314770348,
+            "uncertain": 0.16426737201741046,
+            "wait": 0.22783531321224154
+          }
+        },
+        {
+          "sample_id": "smp_a8a84e5ca12f",
+          "group_id": "grp_0007",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 16.5395,
+          "confidence": 0.5928729871608951,
+          "probabilities": {
+            "close": 0.5928729871608951,
+            "uncertain": 0.1392501657478147,
+            "wait": 0.2678768470912901
+          }
+        },
+        {
+          "sample_id": "smp_c835604c9763",
+          "group_id": "grp_0008",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 16.6116,
+          "confidence": 0.5775908966565416,
+          "probabilities": {
+            "close": 0.5775908966565416,
+            "uncertain": 0.14895179748199214,
+            "wait": 0.27345730586146627
+          }
+        },
+        {
+          "sample_id": "smp_49f2bed27b02",
+          "group_id": "grp_0008",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 16.4936,
+          "confidence": 0.6242820587134155,
+          "probabilities": {
+            "close": 0.6242820587134155,
+            "uncertain": 0.1188185837247891,
+            "wait": 0.25689935756179544
+          }
+        },
+        {
+          "sample_id": "smp_50ce9889d755",
+          "group_id": "grp_0010",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 16.5665,
+          "confidence": 0.6155741074532801,
+          "probabilities": {
+            "close": 0.6155741074532801,
+            "uncertain": 0.1742998863294905,
+            "wait": 0.2101260062172295
+          }
+        },
+        {
+          "sample_id": "smp_8de0071d33d0",
+          "group_id": "grp_0010",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 16.3482,
+          "confidence": 0.6078603083758042,
+          "probabilities": {
+            "close": 0.6078603083758042,
+            "uncertain": 0.13003087724948528,
+            "wait": 0.26210881437471045
+          }
+        },
+        {
+          "sample_id": "smp_169f9ce4ae59",
+          "group_id": "grp_0011",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 16.4297,
+          "confidence": 0.6265716139888426,
+          "probabilities": {
+            "close": 0.6265716139888426,
+            "uncertain": 0.16931358291907855,
+            "wait": 0.20411480309207886
+          }
+        },
+        {
+          "sample_id": "smp_9a6873bff87c",
+          "group_id": "grp_0011",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 16.4888,
+          "confidence": 0.6058374604221332,
+          "probabilities": {
+            "close": 0.6058374604221332,
+            "uncertain": 0.15623615128661317,
+            "wait": 0.23792638829125362
+          }
+        },
+        {
+          "sample_id": "smp_a55832b43fbc",
+          "group_id": "grp_0013",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 16.5616,
+          "confidence": 0.6184777841149706,
+          "probabilities": {
+            "close": 0.6184777841149706,
+            "uncertain": 0.13863168001370754,
+            "wait": 0.2428905358713218
+          }
+        },
+        {
+          "sample_id": "smp_8826b9950a49",
+          "group_id": "grp_0013",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 16.4752,
+          "confidence": 0.6314530063467207,
+          "probabilities": {
+            "close": 0.6314530063467207,
+            "uncertain": 0.16284200610710337,
+            "wait": 0.2057049875461758
+          }
+        },
+        {
+          "sample_id": "smp_96fd80084228",
+          "group_id": "grp_0014",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 16.4951,
+          "confidence": 0.6387737735916237,
+          "probabilities": {
+            "close": 0.6387737735916237,
+            "uncertain": 0.1431810222713527,
+            "wait": 0.21804520413702375
+          }
+        },
+        {
+          "sample_id": "smp_05a275d6552a",
+          "group_id": "grp_0014",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 16.437,
+          "confidence": 0.6212469103873001,
+          "probabilities": {
+            "close": 0.6212469103873001,
+            "uncertain": 0.14591444898850217,
+            "wait": 0.23283864062419773
+          }
+        },
+        {
+          "sample_id": "smp_161abe4544d9",
+          "group_id": "grp_0015",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 16.3993,
+          "confidence": 0.5966664709816701,
+          "probabilities": {
+            "close": 0.5966664709816701,
+            "uncertain": 0.13374267824090927,
+            "wait": 0.2695908507774207
+          }
+        },
+        {
+          "sample_id": "smp_e24c2023967f",
+          "group_id": "grp_0015",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 16.4149,
+          "confidence": 0.5990189465529852,
+          "probabilities": {
+            "close": 0.5990189465529852,
+            "uncertain": 0.15447776156329068,
+            "wait": 0.2465032918837243
+          }
+        },
+        {
+          "sample_id": "smp_6166817d5ed7",
+          "group_id": "grp_0016",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 16.6252,
+          "confidence": 0.5509882350837592,
+          "probabilities": {
+            "close": 0.5509882350837592,
+            "uncertain": 0.14888927322193057,
+            "wait": 0.3001224916943103
+          }
+        },
+        {
+          "sample_id": "smp_6cdc0bdbef99",
+          "group_id": "grp_0016",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 16.8201,
+          "confidence": 0.6149959052041556,
+          "probabilities": {
+            "close": 0.6149959052041556,
+            "uncertain": 0.11981841753213811,
+            "wait": 0.2651856772637063
+          }
+        },
+        {
+          "sample_id": "smp_c3a60e76d740",
+          "group_id": "grp_0018",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 16.7678,
+          "confidence": 0.6252992641724944,
+          "probabilities": {
+            "close": 0.6252992641724944,
+            "uncertain": 0.16125505076657135,
+            "wait": 0.21344568506093436
+          }
+        },
+        {
+          "sample_id": "smp_03e7787e0a83",
+          "group_id": "grp_0018",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 16.7109,
+          "confidence": 0.6262242561783693,
+          "probabilities": {
+            "close": 0.6262242561783693,
+            "uncertain": 0.12784298913676878,
+            "wait": 0.2459327546848619
+          }
+        },
+        {
+          "sample_id": "smp_db0a3170f772",
+          "group_id": "grp_0019",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 16.5631,
+          "confidence": 0.6212469103873001,
+          "probabilities": {
+            "close": 0.6212469103873001,
+            "uncertain": 0.14591444898850214,
+            "wait": 0.2328386406241977
+          }
+        },
+        {
+          "sample_id": "smp_eacc30cdfc3a",
+          "group_id": "grp_0019",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 16.5798,
+          "confidence": 0.5877438949997411,
+          "probabilities": {
+            "close": 0.5877438949997411,
+            "uncertain": 0.15882146985195672,
+            "wait": 0.2534346351483022
+          }
+        },
+        {
+          "sample_id": "smp_7c0630697b23",
+          "group_id": "grp_0020",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 16.4934,
+          "confidence": 0.6105896833263114,
+          "probabilities": {
+            "close": 0.6105896833263114,
+            "uncertain": 0.11352856328300236,
+            "wait": 0.27588175339068627
+          }
+        },
+        {
+          "sample_id": "smp_82a5a8a382ac",
+          "group_id": "grp_0020",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 16.5756,
+          "confidence": 0.5961929400752339,
+          "probabilities": {
+            "close": 0.5961929400752339,
+            "uncertain": 0.14672920419301547,
+            "wait": 0.2570778557317505
+          }
+        },
+        {
+          "sample_id": "smp_43d2b8de4ef8",
+          "group_id": "grp_0021",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 16.5947,
+          "confidence": 0.6536317604066161,
+          "probabilities": {
+            "close": 0.6536317604066161,
+            "uncertain": 0.13343820080534982,
+            "wait": 0.21293003878803402
+          }
+        },
+        {
+          "sample_id": "smp_abaed5c28d27",
+          "group_id": "grp_0021",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 16.4591,
+          "confidence": 0.6101901490992274,
+          "probabilities": {
+            "close": 0.6101901490992274,
+            "uncertain": 0.15017406105555173,
+            "wait": 0.23963578984522102
+          }
+        },
+        {
+          "sample_id": "smp_10be3935d3a9",
+          "group_id": "grp_0022",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 16.5811,
+          "confidence": 0.6002139349326269,
+          "probabilities": {
+            "close": 0.6002139349326269,
+            "uncertain": 0.14097435999531258,
+            "wait": 0.2588117050720605
+          }
+        },
+        {
+          "sample_id": "smp_4eb339fdbf8b",
+          "group_id": "grp_0022",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 16.4982,
+          "confidence": 0.614287353556521,
+          "probabilities": {
+            "close": 0.614287353556521,
+            "uncertain": 0.1659941025901396,
+            "wait": 0.21971854385333933
+          }
+        },
+        {
+          "sample_id": "smp_278863029acb",
+          "group_id": "grp_0023",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 16.4886,
+          "confidence": 0.6058374604221333,
+          "probabilities": {
+            "close": 0.6058374604221333,
+            "uncertain": 0.1562361512866132,
+            "wait": 0.23792638829125368
+          }
+        },
+        {
+          "sample_id": "smp_963af38a1c11",
+          "group_id": "grp_0023",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 16.4436,
+          "confidence": 0.607391272001011,
+          "probabilities": {
+            "close": 0.607391272001011,
+            "uncertain": 0.14266012642091155,
+            "wait": 0.24994860157807747
+          }
+        },
+        {
+          "sample_id": "smp_76d363fc4a71",
+          "group_id": "grp_0025",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 16.433,
+          "confidence": 0.6058374604221332,
+          "probabilities": {
+            "close": 0.6058374604221332,
+            "uncertain": 0.15623615128661317,
+            "wait": 0.23792638829125362
+          }
+        },
+        {
+          "sample_id": "smp_fc999ef5b1aa",
+          "group_id": "grp_0025",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 16.5963,
+          "confidence": 0.614402834399839,
+          "probabilities": {
+            "close": 0.614402834399839,
+            "uncertain": 0.14430695676624988,
+            "wait": 0.24129020883391114
+          }
+        },
+        {
+          "sample_id": "smp_ca4a0e4ec697",
+          "group_id": "grp_0026",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 16.4304,
+          "confidence": 0.6362957938367253,
+          "probabilities": {
+            "close": 0.6362957938367253,
+            "uncertain": 0.13611367467604898,
+            "wait": 0.22759053148722566
+          }
+        },
+        {
+          "sample_id": "smp_deb292ee01ab",
+          "group_id": "grp_0026",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 16.4711,
+          "confidence": 0.6265716139888425,
+          "probabilities": {
+            "close": 0.6265716139888425,
+            "uncertain": 0.16931358291907853,
+            "wait": 0.20411480309207886
+          }
+        },
+        {
+          "sample_id": "smp_c216025f830c",
+          "group_id": "grp_0028",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 16.5236,
+          "confidence": 0.4839389969173846,
+          "probabilities": {
+            "close": 0.4839389969173846,
+            "uncertain": 0.15045226522708866,
+            "wait": 0.36560873785552683
+          }
+        },
+        {
+          "sample_id": "smp_6c5a01abd24b",
+          "group_id": "grp_0028",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 16.5747,
+          "confidence": 0.6189418851035373,
+          "probabilities": {
+            "close": 0.6189418851035373,
+            "uncertain": 0.12635630113798182,
+            "wait": 0.2547018137584809
+          }
+        },
+        {
+          "sample_id": "smp_f41e39b77b9c",
+          "group_id": "grp_0029",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 16.5901,
+          "confidence": 0.6429770876230637,
+          "probabilities": {
+            "close": 0.6429770876230637,
+            "uncertain": 0.13754290846583286,
+            "wait": 0.21948000391110356
+          }
+        },
+        {
+          "sample_id": "smp_3d966d5e2150",
+          "group_id": "grp_0029",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 16.491,
+          "confidence": 0.621537009587715,
+          "probabilities": {
+            "close": 0.621537009587715,
+            "uncertain": 0.17598828282252327,
+            "wait": 0.20247470758976177
+          }
+        },
+        {
+          "sample_id": "smp_2ea6cb8ba9a7",
+          "group_id": "grp_0030",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 16.5752,
+          "confidence": 0.6031572051373271,
+          "probabilities": {
+            "close": 0.6031572051373271,
+            "uncertain": 0.1707840388693222,
+            "wait": 0.2260587559933506
+          }
+        },
+        {
+          "sample_id": "smp_18aaf74cb999",
+          "group_id": "grp_0030",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 16.5302,
+          "confidence": 0.6032738661842435,
+          "probabilities": {
+            "close": 0.6032738661842435,
+            "uncertain": 0.14847189281457712,
+            "wait": 0.24825424100117946
+          }
+        },
+        {
+          "sample_id": "smp_a3dd0addef83",
+          "group_id": "grp_0031",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 16.6513,
+          "confidence": 0.6078603083758042,
+          "probabilities": {
+            "close": 0.6078603083758042,
+            "uncertain": 0.13003087724948528,
+            "wait": 0.26210881437471045
+          }
+        },
+        {
+          "sample_id": "smp_4e5a7de57c05",
+          "group_id": "grp_0031",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 17.3189,
+          "confidence": 0.6314530063467209,
+          "probabilities": {
+            "close": 0.6314530063467209,
+            "uncertain": 0.16284200610710334,
+            "wait": 0.2057049875461758
+          }
+        },
+        {
+          "sample_id": "smp_c4952ffc0bcb",
+          "group_id": "grp_0033",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 17.1595,
+          "confidence": 0.6058374604221333,
+          "probabilities": {
+            "close": 0.6058374604221333,
+            "uncertain": 0.1562361512866132,
+            "wait": 0.23792638829125368
+          }
+        },
+        {
+          "sample_id": "smp_ba402faed5e7",
+          "group_id": "grp_0033",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 16.7524,
+          "confidence": 0.6189418851035373,
+          "probabilities": {
+            "close": 0.6189418851035373,
+            "uncertain": 0.1263563011379818,
+            "wait": 0.25470181375848083
+          }
+        },
+        {
+          "sample_id": "smp_70d214a571e9",
+          "group_id": "grp_0034",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 16.4838,
+          "confidence": 0.5990189465529852,
+          "probabilities": {
+            "close": 0.5990189465529852,
+            "uncertain": 0.15447776156329068,
+            "wait": 0.2465032918837243
+          }
+        },
+        {
+          "sample_id": "smp_a1d4d36c8bc0",
+          "group_id": "grp_0034",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 16.5708,
+          "confidence": 0.6220501292228094,
+          "probabilities": {
+            "close": 0.6220501292228094,
+            "uncertain": 0.18456010135889375,
+            "wait": 0.1933897694182969
+          }
+        },
+        {
+          "sample_id": "smp_e2370c40250f",
+          "group_id": "grp_0036",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 16.5805,
+          "confidence": 0.6183788043956562,
+          "probabilities": {
+            "close": 0.6183788043956562,
+            "uncertain": 0.11497681527347615,
+            "wait": 0.2666443803308676
+          }
+        },
+        {
+          "sample_id": "smp_fe94f36dfd8c",
+          "group_id": "grp_0036",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 16.4931,
+          "confidence": 0.4756197690237166,
+          "probabilities": {
+            "close": 0.4756197690237166,
+            "uncertain": 0.1478658923794456,
+            "wait": 0.37651433859683786
+          }
+        },
+        {
+          "sample_id": "smp_106ee322d1dd",
+          "group_id": "grp_0038",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 16.6093,
+          "confidence": 0.6078603083758042,
+          "probabilities": {
+            "close": 0.6078603083758042,
+            "uncertain": 0.13003087724948537,
+            "wait": 0.26210881437471045
+          }
+        },
+        {
+          "sample_id": "smp_f7b8e75e055d",
+          "group_id": "grp_0038",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 16.4837,
+          "confidence": 0.6169401777569868,
+          "probabilities": {
+            "close": 0.6169401777569868,
+            "uncertain": 0.1518353124167438,
+            "wait": 0.23122450982626933
+          }
+        },
+        {
+          "sample_id": "smp_320c309dd2c0",
+          "group_id": "grp_0040",
+          "label": 0,
+          "status": "ok",
+          "decision": "wait",
+          "elapsed_ms": 16.5602,
+          "confidence": 0.4722787956630005,
+          "probabilities": {
+            "close": 0.37386952764257114,
+            "uncertain": 0.15385167669442823,
+            "wait": 0.4722787956630005
+          }
+        },
+        {
+          "sample_id": "smp_28d9fae9c2a4",
+          "group_id": "grp_0040",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 16.78,
+          "confidence": 0.6293443875579164,
+          "probabilities": {
+            "close": 0.6293443875579164,
+            "uncertain": 0.11167304744261303,
+            "wait": 0.2589825649994704
+          }
+        },
+        {
+          "sample_id": "smp_57a6d7ae7275",
+          "group_id": "grp_0041",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 16.4909,
+          "confidence": 0.6101901490992274,
+          "probabilities": {
+            "close": 0.6101901490992274,
+            "uncertain": 0.1501740610555517,
+            "wait": 0.23963578984522102
+          }
+        },
+        {
+          "sample_id": "smp_3986a4385964",
+          "group_id": "grp_0041",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 16.4578,
+          "confidence": 0.6235227717329271,
+          "probabilities": {
+            "close": 0.6235227717329271,
+            "uncertain": 0.15345535638354016,
+            "wait": 0.22302187188353276
+          }
+        },
+        {
+          "sample_id": "smp_358056c6ed6d",
+          "group_id": "grp_0043",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 16.5145,
+          "confidence": 0.6144028343998389,
+          "probabilities": {
+            "close": 0.6144028343998389,
+            "uncertain": 0.14430695676624988,
+            "wait": 0.24129020883391114
+          }
+        },
+        {
+          "sample_id": "smp_f1862a143639",
+          "group_id": "grp_0043",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 16.45,
+          "confidence": 0.5619328475528026,
+          "probabilities": {
+            "close": 0.5619328475528026,
+            "uncertain": 0.13198314623100516,
+            "wait": 0.30608400621619225
+          }
+        },
+        {
+          "sample_id": "smp_caa737d324ca",
+          "group_id": "grp_0044",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 16.4724,
+          "confidence": 0.5022062053295145,
+          "probabilities": {
+            "close": 0.5022062053295145,
+            "uncertain": 0.13570728403608887,
+            "wait": 0.36208651063439656
+          }
+        },
+        {
+          "sample_id": "smp_7f97188c64d1",
+          "group_id": "grp_0044",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 16.5541,
+          "confidence": 0.6121948494259964,
+          "probabilities": {
+            "close": 0.6121948494259964,
+            "uncertain": 0.11119813756927997,
+            "wait": 0.2766070130047236
+          }
+        },
+        {
+          "sample_id": "smp_1e9895da2e57",
+          "group_id": "grp_0045",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 16.466,
+          "confidence": 0.6407635671696522,
+          "probabilities": {
+            "close": 0.6407635671696522,
+            "uncertain": 0.1504983948768113,
+            "wait": 0.20873803795353643
+          }
+        },
+        {
+          "sample_id": "smp_6948da54e9cb",
+          "group_id": "grp_0045",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 16.5096,
+          "confidence": 0.6041022501638348,
+          "probabilities": {
+            "close": 0.6041022501638348,
+            "uncertain": 0.1354094067584251,
+            "wait": 0.26048834307774016
+          }
+        },
+        {
+          "sample_id": "smp_eea51c376940",
+          "group_id": "grp_0046",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 16.4501,
+          "confidence": 0.6429770876230637,
+          "probabilities": {
+            "close": 0.6429770876230637,
+            "uncertain": 0.1375429084658328,
+            "wait": 0.21948000391110348
+          }
+        },
+        {
+          "sample_id": "smp_2385807b64ea",
+          "group_id": "grp_0046",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 16.4054,
+          "confidence": 0.6113734443906624,
+          "probabilities": {
+            "close": 0.6113734443906624,
+            "uncertain": 0.13703924358888386,
+            "wait": 0.2515873120204537
+          }
+        },
+        {
+          "sample_id": "smp_fa8ab2b2a536",
+          "group_id": "grp_0047",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 16.4481,
+          "confidence": 0.6294422274762439,
+          "probabilities": {
+            "close": 0.6294422274762439,
+            "uncertain": 0.13464758907404253,
+            "wait": 0.2359101834497135
+          }
+        },
+        {
+          "sample_id": "smp_40970a68dc26",
+          "group_id": "grp_0047",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 16.4764,
+          "confidence": 0.621537009587715,
+          "probabilities": {
+            "close": 0.621537009587715,
+            "uncertain": 0.17598828282252327,
+            "wait": 0.20247470758976172
+          }
+        },
+        {
+          "sample_id": "smp_d555f6ce2a62",
+          "group_id": "grp_0048",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 16.6528,
+          "confidence": 0.6276872267169487,
+          "probabilities": {
+            "close": 0.6276872267169487,
+            "uncertain": 0.11401214932205729,
+            "wait": 0.25830062396099407
+          }
+        },
+        {
+          "sample_id": "smp_57e50b0c75e3",
+          "group_id": "grp_0048",
+          "label": 0,
+          "status": "ok",
+          "decision": "wait",
+          "elapsed_ms": 17.0209,
+          "confidence": 0.44712033433298676,
+          "probabilities": {
+            "close": 0.4072237231326181,
+            "uncertain": 0.14565594253439512,
+            "wait": 0.44712033433298676
+          }
+        },
+        {
+          "sample_id": "smp_8a9f87163571",
+          "group_id": "grp_0049",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 16.6453,
+          "confidence": 0.6101901490992274,
+          "probabilities": {
+            "close": 0.6101901490992274,
+            "uncertain": 0.1501740610555517,
+            "wait": 0.23963578984522102
+          }
+        },
+        {
+          "sample_id": "smp_46947bd0447d",
+          "group_id": "grp_0049",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 16.8076,
+          "confidence": 0.6299371648018046,
+          "probabilities": {
+            "close": 0.6299371648018046,
+            "uncertain": 0.15503400438004075,
+            "wait": 0.21502883081815466
+          }
+        }
+      ]
+    },
+    "mercury-cuda-intern-decision-2b-wrist": {
+      "dataset": "mercury_cuda_views",
+      "split": "all",
+      "view_mode": "wrist",
+      "input_condition": "wrist",
+      "image_count": 1,
+      "output_mode": "native_choice",
+      "backend": "intern-decision-2b",
+      "model": "internlm/Intern-Decision-2B",
+      "source_artifact": "out/grip-cuda-fla-runs/intern-decision-2b-wrist",
+      "summary_sha256": "8a94e553c7a9af7d9716cd242a1ca61123d53402a007c20da60e12f41d9f2a5e",
+      "predictions_sha256": "52713311465ca3bfee13718645a804f57785a42fd614aa356418b770f03b76ab",
+      "settings": {
+        "generated_at_utc": "2026-11-26T13:16:46.018754+00:00",
+        "question": "Look at the robot's wrist-camera image. Can the open gripper pick up the orange box by closing its jaws at the current position and orientation, then lifting?",
+        "choices": [
+          "close",
+          "wait",
+          "uncertain"
+        ],
+        "host": "mercury",
+        "warmup_excluded": false,
+        "device": "cuda:0",
+        "dtype": "bfloat16",
+        "flash_linear_attention": "0.4.2",
+        "gpu": "NVIDIA GeForce RTX 4090",
+        "revision": "85c5657708a09884ff9fd8d7f57789b410a97b33",
+        "torch": "2.9.1+cu128",
+        "transformers": "5.19.0"
+      },
+      "metrics": {
+        "n": 6,
+        "positive": 3,
+        "negative": 3,
+        "ok": 6,
+        "responses": {
+          "close": 6,
+          "wait": 0,
+          "uncertain": 0
+        },
+        "failures": {},
+        "correct": 3,
+        "correct_close": 3,
+        "false_close": 3,
+        "deadline_correct_close": {
+          "100ms": 0,
+          "200ms": 0,
+          "500ms": 0
+        },
+        "deadline_false_close": {
+          "100ms": 0,
+          "200ms": 0,
+          "500ms": 0
+        },
+        "p50_ms": 5564.9429,
+        "p95_ms": 24801.414725000002,
+        "p95_method": "linear_interpolation"
+      },
+      "predictions": [
+        {
+          "sample_id": "smp_f8952217086f",
+          "group_id": "grp_0000",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 31204.4851,
+          "confidence": 0.49433435465951725,
+          "probabilities": {
+            "close": 0.49433435465951725,
+            "uncertain": 0.17974743830294954,
+            "wait": 0.3259182070375332
+          }
+        },
+        {
+          "sample_id": "smp_2eae5ff5ba7e",
+          "group_id": "grp_0000",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 5556.0452,
+          "confidence": 0.5221588651272039,
+          "probabilities": {
+            "close": 0.5221588651272039,
+            "uncertain": 0.18986485008773657,
+            "wait": 0.28797628478505954
+          }
+        },
+        {
+          "sample_id": "smp_27eac870d0b5",
+          "group_id": "grp_0000",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 5563.3912,
+          "confidence": 0.6669221291152226,
+          "probabilities": {
+            "close": 0.6669221291152226,
+            "uncertain": 0.19113431249033883,
+            "wait": 0.1419435583944386
+          }
+        },
+        {
+          "sample_id": "smp_7c09efd354ce",
+          "group_id": "grp_0000",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 5592.2036,
+          "confidence": 0.5072955277956864,
+          "probabilities": {
+            "close": 0.5072955277956864,
+            "uncertain": 0.19577062949544072,
+            "wait": 0.29693384270887285
+          }
+        },
+        {
+          "sample_id": "smp_0af66c5670f7",
+          "group_id": "grp_0000",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 5555.0117,
+          "confidence": 0.6399802001417672,
+          "probabilities": {
+            "close": 0.6399802001417672,
+            "uncertain": 0.20659474490310453,
+            "wait": 0.1534250549551283
+          }
+        },
+        {
+          "sample_id": "smp_80b8642c48ad",
+          "group_id": "grp_0000",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 5566.4946,
+          "confidence": 0.5161500093939193,
+          "probabilities": {
+            "close": 0.5161500093939193,
+            "uncertain": 0.19918766049043551,
+            "wait": 0.2846623301156452
+          }
+        }
+      ]
+    },
+    "mercury-cuda-intern-decision-2b-main-wrist": {
+      "dataset": "mercury_cuda_views",
+      "split": "all",
+      "view_mode": "main-wrist",
+      "input_condition": "main-wrist",
+      "image_count": 2,
+      "output_mode": "native_choice",
+      "backend": "intern-decision-2b",
+      "model": "internlm/Intern-Decision-2B",
+      "source_artifact": "out/grip-cuda-fla-runs/intern-decision-2b-main-wrist",
+      "summary_sha256": "2afc9f2665fa80bb18129ad5df72e815fddbf3dbb1601f239fb60647176e9e41",
+      "predictions_sha256": "91f31520ff07c727d2f193c85b1134366b53e052c8992790fa34fd5c7eb003c7",
+      "settings": {
+        "generated_at_utc": "2026-11-26T13:18:16.549088+00:00",
+        "question": "The first image is from the fixed main camera. The second image is from the wrist camera at the same instant. Use both views. Can the open gripper pick up the orange box by closing its jaws at the current position and orientation, then lifting?",
+        "choices": [
+          "close",
+          "wait",
+          "uncertain"
+        ],
+        "host": "mercury",
+        "warmup_excluded": false,
+        "device": "cuda:0",
+        "dtype": "bfloat16",
+        "flash_linear_attention": "0.4.2",
+        "gpu": "NVIDIA GeForce RTX 4090",
+        "revision": "85c5657708a09884ff9fd8d7f57789b410a97b33",
+        "torch": "2.9.1+cu128",
+        "transformers": "5.19.0"
+      },
+      "metrics": {
+        "n": 6,
+        "positive": 3,
+        "negative": 3,
+        "ok": 6,
+        "responses": {
+          "close": 6,
+          "wait": 0,
+          "uncertain": 0
+        },
+        "failures": {},
+        "correct": 3,
+        "correct_close": 3,
+        "false_close": 3,
+        "deadline_correct_close": {
+          "100ms": 0,
+          "200ms": 0,
+          "500ms": 0
+        },
+        "deadline_false_close": {
+          "100ms": 0,
+          "200ms": 0,
+          "500ms": 0
+        },
+        "p50_ms": 14234.598399999999,
+        "p95_ms": 14577.804825000001,
+        "p95_method": "linear_interpolation"
+      },
+      "predictions": [
+        {
+          "sample_id": "smp_f8952217086f",
+          "group_id": "grp_0000",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 14687.8412,
+          "confidence": 0.6477110552625694,
+          "probabilities": {
+            "close": 0.6477110552625694,
+            "uncertain": 0.1970105356796661,
+            "wait": 0.15527840905776444
+          }
+        },
+        {
+          "sample_id": "smp_2eae5ff5ba7e",
+          "group_id": "grp_0000",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 14188.4086,
+          "confidence": 0.6137983656222321,
+          "probabilities": {
+            "close": 0.6137983656222321,
+            "uncertain": 0.21029214001045712,
+            "wait": 0.1759094943673108
+          }
+        },
+        {
+          "sample_id": "smp_27eac870d0b5",
+          "group_id": "grp_0000",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 14247.6957,
+          "confidence": 0.6815390686897028,
+          "probabilities": {
+            "close": 0.6815390686897028,
+            "uncertain": 0.17340639391949933,
+            "wait": 0.14505453739079788
+          }
+        },
+        {
+          "sample_id": "smp_7c09efd354ce",
+          "group_id": "grp_0000",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 14196.4588,
+          "confidence": 0.5715835480014321,
+          "probabilities": {
+            "close": 0.5715835480014321,
+            "uncertain": 0.2078364089305447,
+            "wait": 0.22058004306802328
+          }
+        },
+        {
+          "sample_id": "smp_0af66c5670f7",
+          "group_id": "grp_0000",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 14231.1368,
+          "confidence": 0.5422232439337055,
+          "probabilities": {
+            "close": 0.5422232439337055,
+            "uncertain": 0.22207989079740587,
+            "wait": 0.2356968652688887
+          }
+        },
+        {
+          "sample_id": "smp_80b8642c48ad",
+          "group_id": "grp_0000",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 14238.06,
+          "confidence": 0.6477110552625694,
+          "probabilities": {
+            "close": 0.6477110552625694,
+            "uncertain": 0.1970105356796661,
+            "wait": 0.15527840905776444
+          }
+        }
+      ]
+    },
+    "mercury-cuda-intern-decision-2b-wrist-overlay": {
+      "dataset": "mercury_cuda_views",
+      "split": "all",
+      "view_mode": "wrist-overlay",
+      "input_condition": "wrist-overlay",
+      "image_count": 1,
+      "output_mode": "native_choice",
+      "backend": "intern-decision-2b",
+      "model": "internlm/Intern-Decision-2B",
+      "source_artifact": "out/grip-cuda-fla-runs/intern-decision-2b-wrist-overlay",
+      "summary_sha256": "1a9a5e93cfd31e8cd2f509558c6eb60f158c363a8aa307a97aef356a372ec175",
+      "predictions_sha256": "dbde0877df434760dfdceee559d3829609b0510b8eb044b019753f1b798f6e92",
+      "settings": {
+        "generated_at_utc": "2026-11-26T13:18:55.566096+00:00",
+        "question": "The wrist-camera image shows the current open gripper. The translucent cyan overlay shows the fingers fully closed in empty space at that same wrist pose. Use the overlay as a guide. Can the open gripper pick up the orange box by closing its jaws at the current position and orientation, then lifting?",
+        "choices": [
+          "close",
+          "wait",
+          "uncertain"
+        ],
+        "host": "mercury",
+        "warmup_excluded": false,
+        "device": "cuda:0",
+        "dtype": "bfloat16",
+        "flash_linear_attention": "0.4.2",
+        "gpu": "NVIDIA GeForce RTX 4090",
+        "revision": "85c5657708a09884ff9fd8d7f57789b410a97b33",
+        "torch": "2.9.1+cu128",
+        "transformers": "5.19.0"
+      },
+      "metrics": {
+        "n": 6,
+        "positive": 3,
+        "negative": 3,
+        "ok": 6,
+        "responses": {
+          "close": 6,
+          "wait": 0,
+          "uncertain": 0
+        },
+        "failures": {},
+        "correct": 3,
+        "correct_close": 3,
+        "false_close": 3,
+        "deadline_correct_close": {
+          "100ms": 0,
+          "200ms": 0,
+          "500ms": 0
+        },
+        "deadline_false_close": {
+          "100ms": 0,
+          "200ms": 0,
+          "500ms": 0
+        },
+        "p50_ms": 5652.169,
+        "p95_ms": 6010.7272,
+        "p95_method": "linear_interpolation"
+      },
+      "predictions": [
+        {
+          "sample_id": "smp_f8952217086f",
+          "group_id": "grp_0000",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 6129.3923,
+          "confidence": 0.6399802001417672,
+          "probabilities": {
+            "close": 0.6399802001417672,
+            "uncertain": 0.20659474490310453,
+            "wait": 0.1534250549551283
+          }
+        },
+        {
+          "sample_id": "smp_2eae5ff5ba7e",
+          "group_id": "grp_0000",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 5652.4676,
+          "confidence": 0.6278060719362094,
+          "probabilities": {
+            "close": 0.6278060719362094,
+            "uncertain": 0.2026647529801631,
+            "wait": 0.16952917508362747
+          }
+        },
+        {
+          "sample_id": "smp_27eac870d0b5",
+          "group_id": "grp_0000",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 5644.6838,
+          "confidence": 0.707968637423611,
+          "probabilities": {
+            "close": 0.707968637423611,
+            "uncertain": 0.18013096721965777,
+            "wait": 0.11190039535673114
+          }
+        },
+        {
+          "sample_id": "smp_7c09efd354ce",
+          "group_id": "grp_0000",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 5651.8704,
+          "confidence": 0.6137983656222321,
+          "probabilities": {
+            "close": 0.6137983656222321,
+            "uncertain": 0.21029214001045712,
+            "wait": 0.1759094943673108
+          }
+        },
+        {
+          "sample_id": "smp_0af66c5670f7",
+          "group_id": "grp_0000",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 5643.1957,
+          "confidence": 0.6827675897362805,
+          "probabilities": {
+            "close": 0.6827675897362805,
+            "uncertain": 0.19567549250324467,
+            "wait": 0.12155691776047481
+          }
+        },
+        {
+          "sample_id": "smp_80b8642c48ad",
+          "group_id": "grp_0000",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 5654.7319,
+          "confidence": 0.5413453799240624,
+          "probabilities": {
+            "close": 0.5413453799240624,
+            "uncertain": 0.20891082244990683,
+            "wait": 0.24974379762603083
+          }
+        }
+      ]
+    },
+    "mercury-cuda-intern-decision-2b-pilot": {
+      "dataset": "mercury_cuda_pilot",
+      "split": "eval",
+      "view_mode": "wrist",
+      "input_condition": "pilot",
+      "image_count": 1,
+      "output_mode": "native_choice",
+      "backend": "intern-decision-2b",
+      "model": "internlm/Intern-Decision-2B",
+      "source_artifact": "out/grip-cuda-fla-runs/intern-decision-2b-pilot",
+      "summary_sha256": "a1b01c6960fac9502d8966ef81ff476a8e0aade20eab27fa35a574c1b7e9520f",
+      "predictions_sha256": "03d529c8fdf8a5c766dea70d541a96dfc8c42cc6a80a6c003b7e830ecb0fdf11",
+      "settings": {
+        "generated_at_utc": "2026-11-26T13:20:48.510302+00:00",
+        "question": "Look at the robot's wrist-camera image. Can the open gripper pick up the orange box by closing its jaws at the current position and orientation, then lifting?",
+        "choices": [
+          "close",
+          "wait",
+          "uncertain"
+        ],
+        "host": "mercury",
+        "warmup_excluded": false,
+        "device": "cuda:0",
+        "dtype": "bfloat16",
+        "flash_linear_attention": "0.4.2",
+        "gpu": "NVIDIA GeForce RTX 4090",
+        "revision": "85c5657708a09884ff9fd8d7f57789b410a97b33",
+        "torch": "2.9.1+cu128",
+        "transformers": "5.19.0"
+      },
+      "metrics": {
+        "n": 80,
+        "positive": 40,
+        "negative": 40,
+        "ok": 80,
+        "responses": {
+          "close": 80,
+          "wait": 0,
+          "uncertain": 0
+        },
+        "failures": {},
+        "correct": 40,
+        "correct_close": 40,
+        "false_close": 40,
+        "deadline_correct_close": {
+          "100ms": 0,
+          "200ms": 0,
+          "500ms": 0
+        },
+        "deadline_false_close": {
+          "100ms": 0,
+          "200ms": 0,
+          "500ms": 0
+        },
+        "p50_ms": 1344.83465,
+        "p95_ms": 1351.59219,
+        "p95_method": "linear_interpolation",
+        "paired": {
+          "pairs": 40,
+          "both_correct": 0,
+          "positive_close_without_negative_close": 0,
+          "higher_positive_close_score": 37,
+          "equal_close_score": 0,
+          "lower_positive_close_score": 3
+        }
+      },
+      "predictions": [
+        {
+          "sample_id": "smp_b18e5cb491b1",
+          "group_id": "grp_0000",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1840.6481,
+          "confidence": 0.6980953289348948,
+          "probabilities": {
+            "close": 0.6980953289348948,
+            "uncertain": 0.17761886786586595,
+            "wait": 0.1242858031992392
+          }
+        },
+        {
+          "sample_id": "smp_471e9fb455ce",
+          "group_id": "grp_0000",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1352.7415,
+          "confidence": 0.6800075169610355,
+          "probabilities": {
+            "close": 0.6800075169610355,
+            "uncertain": 0.18362535597604923,
+            "wait": 0.13636712706291534
+          }
+        },
+        {
+          "sample_id": "smp_2496c029148b",
+          "group_id": "grp_0001",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1345.4496,
+          "confidence": 0.43902018581883095,
+          "probabilities": {
+            "close": 0.43902018581883095,
+            "uncertain": 0.21495590198409367,
+            "wait": 0.3460239121970754
+          }
+        },
+        {
+          "sample_id": "smp_3986de983a00",
+          "group_id": "grp_0001",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1351.5317,
+          "confidence": 0.607248577441646,
+          "probabilities": {
+            "close": 0.607248577441646,
+            "uncertain": 0.20804813237280784,
+            "wait": 0.18470329018554632
+          }
+        },
+        {
+          "sample_id": "smp_75debfd8ca02",
+          "group_id": "grp_0002",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1344.5375,
+          "confidence": 0.46273325520390546,
+          "probabilities": {
+            "close": 0.46273325520390546,
+            "uncertain": 0.21347694760140545,
+            "wait": 0.32378979719468914
+          }
+        },
+        {
+          "sample_id": "smp_d634d054d6ba",
+          "group_id": "grp_0002",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1351.1056,
+          "confidence": 0.5274191718357556,
+          "probabilities": {
+            "close": 0.5274191718357556,
+            "uncertain": 0.22926174016915335,
+            "wait": 0.24331908799509105
+          }
+        },
+        {
+          "sample_id": "smp_85dbdf151a82",
+          "group_id": "grp_0003",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1350.3094,
+          "confidence": 0.4537252652555171,
+          "probabilities": {
+            "close": 0.4537252652555171,
+            "uncertain": 0.2093212073493388,
+            "wait": 0.33695352739514406
+          }
+        },
+        {
+          "sample_id": "smp_15f8ec1215af",
+          "group_id": "grp_0003",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1344.6958,
+          "confidence": 0.5715835480014321,
+          "probabilities": {
+            "close": 0.5715835480014321,
+            "uncertain": 0.22058004306802328,
+            "wait": 0.2078364089305447
+          }
+        },
+        {
+          "sample_id": "smp_c31cc8429a0f",
+          "group_id": "grp_0004",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1343.9967,
+          "confidence": 0.6121264426624519,
+          "probabilities": {
+            "close": 0.6121264426624519,
+            "uncertain": 0.22257841944329212,
+            "wait": 0.1652951378942561
+          }
+        },
+        {
+          "sample_id": "smp_a993754bc4c3",
+          "group_id": "grp_0004",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1342.12,
+          "confidence": 0.6669221291152226,
+          "probabilities": {
+            "close": 0.6669221291152226,
+            "uncertain": 0.19113431249033883,
+            "wait": 0.1419435583944386
+          }
+        },
+        {
+          "sample_id": "smp_19c279c08a6e",
+          "group_id": "grp_0005",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1342.6657,
+          "confidence": 0.46851154013646035,
+          "probabilities": {
+            "close": 0.46851154013646035,
+            "uncertain": 0.20365541337815743,
+            "wait": 0.3278330464853823
+          }
+        },
+        {
+          "sample_id": "smp_7d14429ef1d5",
+          "group_id": "grp_0005",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1341.4035,
+          "confidence": 0.5929687997051027,
+          "probabilities": {
+            "close": 0.5929687997051027,
+            "uncertain": 0.21561241337487377,
+            "wait": 0.19141878692002343
+          }
+        },
+        {
+          "sample_id": "smp_824359ccf871",
+          "group_id": "grp_0006",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1343.3887,
+          "confidence": 0.49504627661685335,
+          "probabilities": {
+            "close": 0.49504627661685335,
+            "uncertain": 0.2151896987030815,
+            "wait": 0.2897640246800651
+          }
+        },
+        {
+          "sample_id": "smp_32cdacf0a4e5",
+          "group_id": "grp_0006",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1344.2429,
+          "confidence": 0.5715835480014321,
+          "probabilities": {
+            "close": 0.5715835480014321,
+            "uncertain": 0.22058004306802328,
+            "wait": 0.2078364089305447
+          }
+        },
+        {
+          "sample_id": "smp_d24f8b9bbea2",
+          "group_id": "grp_0007",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1341.049,
+          "confidence": 0.4775564559696813,
+          "probabilities": {
+            "close": 0.4775564559696813,
+            "uncertain": 0.2075871140580079,
+            "wait": 0.3148564299723108
+          }
+        },
+        {
+          "sample_id": "smp_a8a84e5ca12f",
+          "group_id": "grp_0007",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1343.4766,
+          "confidence": 0.6137983656222321,
+          "probabilities": {
+            "close": 0.6137983656222321,
+            "uncertain": 0.21029214001045712,
+            "wait": 0.1759094943673108
+          }
+        },
+        {
+          "sample_id": "smp_c835604c9763",
+          "group_id": "grp_0008",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1339.1959,
+          "confidence": 0.7053332017143141,
+          "probabilities": {
+            "close": 0.7053332017143141,
+            "uncertain": 0.16909239603965528,
+            "wait": 0.12557440224603048
+          }
+        },
+        {
+          "sample_id": "smp_49f2bed27b02",
+          "group_id": "grp_0008",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1340.018,
+          "confidence": 0.6669221291152226,
+          "probabilities": {
+            "close": 0.6669221291152226,
+            "uncertain": 0.19113431249033883,
+            "wait": 0.1419435583944386
+          }
+        },
+        {
+          "sample_id": "smp_50ce9889d755",
+          "group_id": "grp_0010",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1340.1043,
+          "confidence": 0.44203075659972885,
+          "probabilities": {
+            "close": 0.44203075659972885,
+            "uncertain": 0.22970050681729773,
+            "wait": 0.3282687365829735
+          }
+        },
+        {
+          "sample_id": "smp_8de0071d33d0",
+          "group_id": "grp_0010",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1340.2571,
+          "confidence": 0.6278060719362094,
+          "probabilities": {
+            "close": 0.6278060719362094,
+            "uncertain": 0.2026647529801631,
+            "wait": 0.16952917508362747
+          }
+        },
+        {
+          "sample_id": "smp_169f9ce4ae59",
+          "group_id": "grp_0011",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1342.8464,
+          "confidence": 0.45057600116879937,
+          "probabilities": {
+            "close": 0.45057600116879937,
+            "uncertain": 0.23414103693385035,
+            "wait": 0.3152829618973503
+          }
+        },
+        {
+          "sample_id": "smp_9a6873bff87c",
+          "group_id": "grp_0011",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1343.1584,
+          "confidence": 0.5933958484800468,
+          "probabilities": {
+            "close": 0.5933958484800468,
+            "uncertain": 0.20330207575997658,
+            "wait": 0.20330207575997658
+          }
+        },
+        {
+          "sample_id": "smp_a55832b43fbc",
+          "group_id": "grp_0013",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1344.4672,
+          "confidence": 0.6137983656222321,
+          "probabilities": {
+            "close": 0.6137983656222321,
+            "uncertain": 0.21029214001045712,
+            "wait": 0.1759094943673108
+          }
+        },
+        {
+          "sample_id": "smp_8826b9950a49",
+          "group_id": "grp_0013",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1343.1454,
+          "confidence": 0.44203075659972885,
+          "probabilities": {
+            "close": 0.44203075659972885,
+            "uncertain": 0.22970050681729773,
+            "wait": 0.3282687365829735
+          }
+        },
+        {
+          "sample_id": "smp_96fd80084228",
+          "group_id": "grp_0014",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1342.9662,
+          "confidence": 0.49504627661685335,
+          "probabilities": {
+            "close": 0.49504627661685335,
+            "uncertain": 0.2151896987030815,
+            "wait": 0.2897640246800651
+          }
+        },
+        {
+          "sample_id": "smp_05a275d6552a",
+          "group_id": "grp_0014",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1344.7423,
+          "confidence": 0.5344987135800428,
+          "probabilities": {
+            "close": 0.5344987135800428,
+            "uncertain": 0.21891613442866567,
+            "wait": 0.24658515199129152
+          }
+        },
+        {
+          "sample_id": "smp_161abe4544d9",
+          "group_id": "grp_0015",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1343.2957,
+          "confidence": 0.5929687997051027,
+          "probabilities": {
+            "close": 0.5929687997051027,
+            "uncertain": 0.21561241337487377,
+            "wait": 0.19141878692002343
+          }
+        },
+        {
+          "sample_id": "smp_e24c2023967f",
+          "group_id": "grp_0015",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1345.3708,
+          "confidence": 0.4775564559696813,
+          "probabilities": {
+            "close": 0.4775564559696813,
+            "uncertain": 0.2075871140580079,
+            "wait": 0.3148564299723108
+          }
+        },
+        {
+          "sample_id": "smp_6166817d5ed7",
+          "group_id": "grp_0016",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1344.856,
+          "confidence": 0.6854074185246561,
+          "probabilities": {
+            "close": 0.6854074185246561,
+            "uncertain": 0.1850835110984444,
+            "wait": 0.1295090703768995
+          }
+        },
+        {
+          "sample_id": "smp_6cdc0bdbef99",
+          "group_id": "grp_0016",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1344.5815,
+          "confidence": 0.661167729359478,
+          "probabilities": {
+            "close": 0.661167729359478,
+            "uncertain": 0.18948516106011606,
+            "wait": 0.14934710958040587
+          }
+        },
+        {
+          "sample_id": "smp_c3a60e76d740",
+          "group_id": "grp_0018",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1344.6641,
+          "confidence": 0.4715543464741033,
+          "probabilities": {
+            "close": 0.4715543464741033,
+            "uncertain": 0.21754646488610513,
+            "wait": 0.3108991886397916
+          }
+        },
+        {
+          "sample_id": "smp_03e7787e0a83",
+          "group_id": "grp_0018",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1409.2996,
+          "confidence": 0.5929687997051027,
+          "probabilities": {
+            "close": 0.5929687997051027,
+            "uncertain": 0.21561241337487377,
+            "wait": 0.19141878692002343
+          }
+        },
+        {
+          "sample_id": "smp_db0a3170f772",
+          "group_id": "grp_0019",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1343.1022,
+          "confidence": 0.44797562670940033,
+          "probabilities": {
+            "close": 0.44797562670940033,
+            "uncertain": 0.2193407326762128,
+            "wait": 0.3326836406143868
+          }
+        },
+        {
+          "sample_id": "smp_eacc30cdfc3a",
+          "group_id": "grp_0019",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1351.1756,
+          "confidence": 0.5860898755070578,
+          "probabilities": {
+            "close": 0.5860898755070578,
+            "uncertain": 0.21311113006298077,
+            "wait": 0.20079899442996144
+          }
+        },
+        {
+          "sample_id": "smp_7c0630697b23",
+          "group_id": "grp_0020",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1349.8582,
+          "confidence": 0.6928156127075698,
+          "probabilities": {
+            "close": 0.6928156127075698,
+            "uncertain": 0.1762755259315444,
+            "wait": 0.13090886136088584
+          }
+        },
+        {
+          "sample_id": "smp_82a5a8a382ac",
+          "group_id": "grp_0020",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1347.4142,
+          "confidence": 0.6477110552625694,
+          "probabilities": {
+            "close": 0.6477110552625694,
+            "uncertain": 0.1970105356796661,
+            "wait": 0.15527840905776444
+          }
+        },
+        {
+          "sample_id": "smp_43d2b8de4ef8",
+          "group_id": "grp_0021",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1345.9939,
+          "confidence": 0.4775564559696813,
+          "probabilities": {
+            "close": 0.4775564559696813,
+            "uncertain": 0.2075871140580079,
+            "wait": 0.3148564299723108
+          }
+        },
+        {
+          "sample_id": "smp_abaed5c28d27",
+          "group_id": "grp_0021",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1346.9012,
+          "confidence": 0.6146362777667522,
+          "probabilities": {
+            "close": 0.6146362777667522,
+            "uncertain": 0.1984133605476664,
+            "wait": 0.18695036168558135
+          }
+        },
+        {
+          "sample_id": "smp_10be3935d3a9",
+          "group_id": "grp_0022",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1345.7527,
+          "confidence": 0.5715835480014321,
+          "probabilities": {
+            "close": 0.5715835480014321,
+            "uncertain": 0.22058004306802328,
+            "wait": 0.2078364089305447
+          }
+        },
+        {
+          "sample_id": "smp_4eb339fdbf8b",
+          "group_id": "grp_0022",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1347.6588,
+          "confidence": 0.4274081416282574,
+          "probabilities": {
+            "close": 0.4274081416282574,
+            "uncertain": 0.23572023363610978,
+            "wait": 0.33687162473563287
+          }
+        },
+        {
+          "sample_id": "smp_278863029acb",
+          "group_id": "grp_0023",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1344.8974,
+          "confidence": 0.42442140398854905,
+          "probabilities": {
+            "close": 0.42442140398854905,
+            "uncertain": 0.2205498490952292,
+            "wait": 0.3550287469162217
+          }
+        },
+        {
+          "sample_id": "smp_963af38a1c11",
+          "group_id": "grp_0023",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1349.0676,
+          "confidence": 0.5785301864674938,
+          "probabilities": {
+            "close": 0.5785301864674938,
+            "uncertain": 0.22326082840221836,
+            "wait": 0.19820898513028792
+          }
+        },
+        {
+          "sample_id": "smp_76d363fc4a71",
+          "group_id": "grp_0025",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1349.5572,
+          "confidence": 0.44797562670940033,
+          "probabilities": {
+            "close": 0.44797562670940033,
+            "uncertain": 0.2193407326762128,
+            "wait": 0.3326836406143868
+          }
+        },
+        {
+          "sample_id": "smp_fc999ef5b1aa",
+          "group_id": "grp_0025",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1344.0544,
+          "confidence": 0.607248577441646,
+          "probabilities": {
+            "close": 0.607248577441646,
+            "uncertain": 0.20804813237280784,
+            "wait": 0.18470329018554632
+          }
+        },
+        {
+          "sample_id": "smp_ca4a0e4ec697",
+          "group_id": "grp_0026",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1368.5942,
+          "confidence": 0.5639560234031341,
+          "probabilities": {
+            "close": 0.5639560234031341,
+            "uncertain": 0.23098104821852794,
+            "wait": 0.205062928378338
+          }
+        },
+        {
+          "sample_id": "smp_deb292ee01ab",
+          "group_id": "grp_0026",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1349.467,
+          "confidence": 0.4567545602527093,
+          "probabilities": {
+            "close": 0.4567545602527093,
+            "uncertain": 0.2236391257655838,
+            "wait": 0.3196063139817068
+          }
+        },
+        {
+          "sample_id": "smp_c216025f830c",
+          "group_id": "grp_0028",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1347.2131,
+          "confidence": 0.605984673423195,
+          "probabilities": {
+            "close": 0.605984673423195,
+            "uncertain": 0.22034517674629187,
+            "wait": 0.17367014983051324
+          }
+        },
+        {
+          "sample_id": "smp_6c5a01abd24b",
+          "group_id": "grp_0028",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1346.7353,
+          "confidence": 0.6980953289348948,
+          "probabilities": {
+            "close": 0.6980953289348948,
+            "uncertain": 0.17761886786586595,
+            "wait": 0.1242858031992392
+          }
+        },
+        {
+          "sample_id": "smp_f41e39b77b9c",
+          "group_id": "grp_0029",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1346.7102,
+          "confidence": 0.6137983656222321,
+          "probabilities": {
+            "close": 0.6137983656222321,
+            "uncertain": 0.21029214001045712,
+            "wait": 0.1759094943673108
+          }
+        },
+        {
+          "sample_id": "smp_3d966d5e2150",
+          "group_id": "grp_0029",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1348.0489,
+          "confidence": 0.44203075659972885,
+          "probabilities": {
+            "close": 0.44203075659972885,
+            "uncertain": 0.22970050681729773,
+            "wait": 0.3282687365829735
+          }
+        },
+        {
+          "sample_id": "smp_2ea6cb8ba9a7",
+          "group_id": "grp_0030",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1345.7549,
+          "confidence": 0.4775564559696813,
+          "probabilities": {
+            "close": 0.4775564559696813,
+            "uncertain": 0.2075871140580079,
+            "wait": 0.3148564299723108
+          }
+        },
+        {
+          "sample_id": "smp_18aaf74cb999",
+          "group_id": "grp_0030",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1349.4908,
+          "confidence": 0.5789616163099506,
+          "probabilities": {
+            "close": 0.5789616163099506,
+            "uncertain": 0.2105191918450247,
+            "wait": 0.2105191918450247
+          }
+        },
+        {
+          "sample_id": "smp_a3dd0addef83",
+          "group_id": "grp_0031",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1349.6757,
+          "confidence": 0.5929687997051027,
+          "probabilities": {
+            "close": 0.5929687997051027,
+            "uncertain": 0.21561241337487377,
+            "wait": 0.19141878692002343
+          }
+        },
+        {
+          "sample_id": "smp_4e5a7de57c05",
+          "group_id": "grp_0031",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1348.8617,
+          "confidence": 0.4589354939439312,
+          "probabilities": {
+            "close": 0.4589354939439312,
+            "uncertain": 0.23848502308496475,
+            "wait": 0.30257948297110404
+          }
+        },
+        {
+          "sample_id": "smp_c4952ffc0bcb",
+          "group_id": "grp_0033",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1351.4318,
+          "confidence": 0.4740895946328049,
+          "probabilities": {
+            "close": 0.4740895946328049,
+            "uncertain": 0.19417419953404177,
+            "wait": 0.3317362058331534
+          }
+        },
+        {
+          "sample_id": "smp_ba402faed5e7",
+          "group_id": "grp_0033",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1350.4608,
+          "confidence": 0.5715835480014321,
+          "probabilities": {
+            "close": 0.5715835480014321,
+            "uncertain": 0.22058004306802328,
+            "wait": 0.2078364089305447
+          }
+        },
+        {
+          "sample_id": "smp_70d214a571e9",
+          "group_id": "grp_0034",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1346.4863,
+          "confidence": 0.6457036380467147,
+          "probabilities": {
+            "close": 0.6457036380467147,
+            "uncertain": 0.2084423453675693,
+            "wait": 0.14585401658571592
+          }
+        },
+        {
+          "sample_id": "smp_a1d4d36c8bc0",
+          "group_id": "grp_0034",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1350.0642,
+          "confidence": 0.4801791575375805,
+          "probabilities": {
+            "close": 0.4801791575375805,
+            "uncertain": 0.22152542483099283,
+            "wait": 0.29829541763142675
+          }
+        },
+        {
+          "sample_id": "smp_e2370c40250f",
+          "group_id": "grp_0036",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1342.4682,
+          "confidence": 0.6800075169610355,
+          "probabilities": {
+            "close": 0.6800075169610355,
+            "uncertain": 0.18362535597604923,
+            "wait": 0.13636712706291534
+          }
+        },
+        {
+          "sample_id": "smp_fe94f36dfd8c",
+          "group_id": "grp_0036",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1346.6284,
+          "confidence": 0.5626531569717642,
+          "probabilities": {
+            "close": 0.5626531569717642,
+            "uncertain": 0.2445774604711985,
+            "wait": 0.19276938255703727
+          }
+        },
+        {
+          "sample_id": "smp_106ee322d1dd",
+          "group_id": "grp_0038",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1349.9764,
+          "confidence": 0.5715835480014321,
+          "probabilities": {
+            "close": 0.5715835480014321,
+            "uncertain": 0.22058004306802328,
+            "wait": 0.2078364089305447
+          }
+        },
+        {
+          "sample_id": "smp_f7b8e75e055d",
+          "group_id": "grp_0038",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1342.1766,
+          "confidence": 0.4775564559696813,
+          "probabilities": {
+            "close": 0.4775564559696813,
+            "uncertain": 0.2075871140580079,
+            "wait": 0.3148564299723108
+          }
+        },
+        {
+          "sample_id": "smp_320c309dd2c0",
+          "group_id": "grp_0040",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1343.5383,
+          "confidence": 0.583520100787144,
+          "probabilities": {
+            "close": 0.583520100787144,
+            "uncertain": 0.2389939582562525,
+            "wait": 0.1774859409566034
+          }
+        },
+        {
+          "sample_id": "smp_28d9fae9c2a4",
+          "group_id": "grp_0040",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1351.3208,
+          "confidence": 0.7104876862363456,
+          "probabilities": {
+            "close": 0.7104876862363456,
+            "uncertain": 0.17032809846524477,
+            "wait": 0.11918421529840956
+          }
+        },
+        {
+          "sample_id": "smp_57a6d7ae7275",
+          "group_id": "grp_0041",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1349.4495,
+          "confidence": 0.605984673423195,
+          "probabilities": {
+            "close": 0.605984673423195,
+            "uncertain": 0.22034517674629187,
+            "wait": 0.17367014983051324
+          }
+        },
+        {
+          "sample_id": "smp_3986a4385964",
+          "group_id": "grp_0041",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1344.9672,
+          "confidence": 0.4274081416282574,
+          "probabilities": {
+            "close": 0.4274081416282574,
+            "uncertain": 0.23572023363610978,
+            "wait": 0.33687162473563287
+          }
+        },
+        {
+          "sample_id": "smp_358056c6ed6d",
+          "group_id": "grp_0043",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1344.3188,
+          "confidence": 0.44797562670940033,
+          "probabilities": {
+            "close": 0.44797562670940033,
+            "uncertain": 0.2193407326762128,
+            "wait": 0.3326836406143868
+          }
+        },
+        {
+          "sample_id": "smp_f1862a143639",
+          "group_id": "grp_0043",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1344.6871,
+          "confidence": 0.5639560234031341,
+          "probabilities": {
+            "close": 0.5639560234031341,
+            "uncertain": 0.23098104821852794,
+            "wait": 0.205062928378338
+          }
+        },
+        {
+          "sample_id": "smp_caa737d324ca",
+          "group_id": "grp_0044",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1344.8133,
+          "confidence": 0.6038848924106759,
+          "probabilities": {
+            "close": 0.6038848924106759,
+            "uncertain": 0.23304547134064893,
+            "wait": 0.16306963624867515
+          }
+        },
+        {
+          "sample_id": "smp_7f97188c64d1",
+          "group_id": "grp_0044",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1346.103,
+          "confidence": 0.6854074185246561,
+          "probabilities": {
+            "close": 0.6854074185246561,
+            "uncertain": 0.1850835110984444,
+            "wait": 0.1295090703768995
+          }
+        },
+        {
+          "sample_id": "smp_1e9895da2e57",
+          "group_id": "grp_0045",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1347.3168,
+          "confidence": 0.46851154013646035,
+          "probabilities": {
+            "close": 0.46851154013646035,
+            "uncertain": 0.20365541337815743,
+            "wait": 0.3278330464853823
+          }
+        },
+        {
+          "sample_id": "smp_6948da54e9cb",
+          "group_id": "grp_0045",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1343.064,
+          "confidence": 0.6340157823614907,
+          "probabilities": {
+            "close": 0.6340157823614907,
+            "uncertain": 0.20466933501022,
+            "wait": 0.16131488262828933
+          }
+        },
+        {
+          "sample_id": "smp_eea51c376940",
+          "group_id": "grp_0046",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1341.9176,
+          "confidence": 0.4982244904838738,
+          "probabilities": {
+            "close": 0.4982244904838738,
+            "uncertain": 0.19227002437010074,
+            "wait": 0.30950548514602555
+          }
+        },
+        {
+          "sample_id": "smp_2385807b64ea",
+          "group_id": "grp_0046",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1342.0954,
+          "confidence": 0.607248577441646,
+          "probabilities": {
+            "close": 0.607248577441646,
+            "uncertain": 0.20804813237280784,
+            "wait": 0.18470329018554632
+          }
+        },
+        {
+          "sample_id": "smp_fa8ab2b2a536",
+          "group_id": "grp_0047",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1341.5259,
+          "confidence": 0.605984673423195,
+          "probabilities": {
+            "close": 0.605984673423195,
+            "uncertain": 0.22034517674629187,
+            "wait": 0.17367014983051324
+          }
+        },
+        {
+          "sample_id": "smp_40970a68dc26",
+          "group_id": "grp_0047",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1342.4447,
+          "confidence": 0.4801791575375805,
+          "probabilities": {
+            "close": 0.4801791575375805,
+            "uncertain": 0.22152542483099283,
+            "wait": 0.29829541763142675
+          }
+        },
+        {
+          "sample_id": "smp_d555f6ce2a62",
+          "group_id": "grp_0048",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1342.3843,
+          "confidence": 0.6980953289348948,
+          "probabilities": {
+            "close": 0.6980953289348948,
+            "uncertain": 0.17761886786586595,
+            "wait": 0.1242858031992392
+          }
+        },
+        {
+          "sample_id": "smp_57e50b0c75e3",
+          "group_id": "grp_0048",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1339.1208,
+          "confidence": 0.6038848924106759,
+          "probabilities": {
+            "close": 0.6038848924106759,
+            "uncertain": 0.23304547134064893,
+            "wait": 0.16306963624867515
+          }
+        },
+        {
+          "sample_id": "smp_8a9f87163571",
+          "group_id": "grp_0049",
+          "label": 1,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1341.7654,
+          "confidence": 0.5569531312897518,
+          "probabilities": {
+            "close": 0.5569531312897518,
+            "uncertain": 0.21493401779364749,
+            "wait": 0.22811285091660072
+          }
+        },
+        {
+          "sample_id": "smp_46947bd0447d",
+          "group_id": "grp_0049",
+          "label": 0,
+          "status": "ok",
+          "decision": "close",
+          "elapsed_ms": 1340.4852,
+          "confidence": 0.49504627661685335,
+          "probabilities": {
+            "close": 0.49504627661685335,
+            "uncertain": 0.2151896987030815,
+            "wait": 0.2897640246800651
+          }
         }
       ]
     }

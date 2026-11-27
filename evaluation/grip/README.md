@@ -179,7 +179,9 @@ uv run --script run-grip-cuda.py --dataset out/grip-cases-views --view-mode main
 runtime versions. The per-request duration includes image preparation, native
 inference and answer validation, including work triggered by the first request.
 It excludes checkpoint loading and scoring. The RTX 4090 runs are recorded as
-`mercury-cuda-*` in [the measurement data](report/results.json).
+`mercury-cuda-*` in [the historical measurement data](report/results.json).
+The fixed-image two-choice results for CUDA and Responses are in the
+[pilot evaluation report](report/pilot-2026-11-27/README.md).
 
 Run the focused regression suite:
 
